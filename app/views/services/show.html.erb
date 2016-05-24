@@ -1,0 +1,32 @@
+<p>
+  <strong>Name:</strong>
+  <%= @service.name %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @service.company %>
+</p>
+
+<p>
+  <strong>Street address:</strong>
+  <%= @service.street_address %>
+</p>
+
+<p>
+  <strong>Zip code:</strong>
+  <%= @service.zip_code %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @service.city %>
+</p>
+
+<p>
+  <strong>Postal box:</strong>
+  <%= @service.postal_box %>
+</p>
+
+
+<p><%= link_to 'Unsub', new_service_unsub_path(@service) %></p>
