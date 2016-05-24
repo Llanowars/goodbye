@@ -1,0 +1,29 @@
+<div class="user">
+  <p><%= User.firstname User.lastname%></p>
+  <p><%= User.street_address %></p>
+  <p><%= User.zip_code User.city%></p>
+</div>
+
+<div class="service">
+  <p><%= Service.company %></p>
+  <p><%= Service.name %></p>
+  <p><%= Service.postal_code %></p>
+  <p><%= Service.zip_code Service.city %></p>
+</div>
+
+<div class="date">
+  <p><%= User.city %>, le <%= Date.today.strftime("%d-%m-%Y") %></p>
+</div>
+
+
+<div class="object">
+ <p> Objet: Résiliation de la carte cinéma référence client N°  <%= Unsub.contract_number %> </p>
+</div>
+
+<div class="body">
+  <p></p>
+</div>
+
+<div class="signature">
+  <p><%= User.firstname User.lastname%></p>
+</div>

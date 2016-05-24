@@ -1,0 +1,19 @@
+{
+  "fields": [
+    {
+      "name" : "nom",
+      "type" : "string",
+      "required" : true
+    },
+    {
+      "lastname" : "last_name",
+      "type" : "string",
+      "required" : true
+    },
+    {
+      "name" : "gender",
+      "type" : "single_choice",
+      "choices" : [ "male", "female" ]
+    }
+  ]
+}
