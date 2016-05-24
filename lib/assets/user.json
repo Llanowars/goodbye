@@ -1,0 +1,42 @@
+{
+  "fields": [
+    {
+      "firstname" : "Prénom",
+      "type" : "string",
+      "required" : true
+    },
+    {
+      "lastname" : "Nom",
+      "type" : "string",
+      "required" : true
+    },
+     {
+      "email" : "Email",
+      "type" : "string",
+      "required" : true
+    },
+    {
+      "address" : "Adresse",
+      "type" : "string",
+      "required" : true
+    },
+    {
+      "address_complement" : "Complément d'adresse",
+      "type" : "string"
+    },
+    {
+      "zipcode" : "Code postal",
+      "type" : "string",
+      "required" : true
+    },
+    {
+      "city" : "Ville",
+      "type" : "string",
+      "required" : true
+    },
+    {
+      "phone" : "Numéro de telephone",
+      "type" : "string"
+    }
+  ]
+}

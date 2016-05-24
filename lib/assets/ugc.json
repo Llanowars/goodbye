@@ -1,0 +1,12 @@
+{
+  "Engagement": {
+    "title": "Date de votre insciption à UGC",
+    "type": "string",
+    "choices": [
+      "Plus d' 1 an",
+      "Moins de 14 jours",
+      "Moins d' 1 an",
+      "Je ne sais pas"
+    ]
+  }
+}
