@@ -4,7 +4,7 @@
   background: white;
   transition: all 0.3s ease;
   display: flex;
-  height: 70px;
+  height: 65px;
   padding: 0px 30px;
   align-items: center;
   justify-content: space-between;
@@ -12,7 +12,7 @@
 
 .fa-unlock-alt {
   font-size: 2.0em;
-  color: #1bf5af;
+  color: rgba(27, 245, 175, 1);
 }
 
 /* Optional class to fix the navbar on top */
@@ -45,7 +45,7 @@
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: #1bf5af;
+  color: rgba(27, 245, 175, 1);
   text-decoration: none;
 }
 
@@ -55,10 +55,10 @@
   padding: 0 20px;
   border-radius: 20em;
   line-height: 40px;
-  background-color: #1bf5af;
+  background-color: rgba(27, 245, 175, 1);
   color: white;
   font-size: 14px;
-  border: 2px solid #1bf5af;
+  border: 2px solid rgba(27, 245, 175, 1);
 }
 .navbar-wagon-button:hover {
   color: white;
