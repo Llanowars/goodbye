@@ -43,7 +43,7 @@ class UnsubsController < ApplicationController
   private
 
   def unsub_params
-    params.require(:unsub).permit()
+    params.require(:unsub).permit(:form_complete, :photo)
   end
 
 end
