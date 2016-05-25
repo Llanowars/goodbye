@@ -29,6 +29,7 @@ gem "coffee-rails"
 gem 'rails-assets-bootstrap-datepicker'
 gem "gmaps4rails"
 gem "geocoder"
+gem 'carrierwave'
 
 
 group :development, :test do
