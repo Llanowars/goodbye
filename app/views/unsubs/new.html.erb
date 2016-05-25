@@ -15,11 +15,15 @@
         <% end %>
       </fieldset>
     <% end %>
-
-
-
+      <div>
+        <%= form_tag "/profiles/update", :multipart => true %>
+        <%= file_field_tag :photo %>
+      </div>
     <%= submit_tag "validate" %>
   <% end %>
 </div>
+
+
+
 
 
