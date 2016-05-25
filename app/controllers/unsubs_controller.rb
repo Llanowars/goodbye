@@ -1,7 +1,10 @@
 class UnsubsController < ApplicationController
 
   def new
+    @service = Service.find(params[:service_id])
     @unsub = Unsub.new
+    @user = User.new
+    initialize_form
   end
 
   def create
@@ -13,6 +16,15 @@ class UnsubsController < ApplicationController
     else
       render 'service/show'
     end
+  end
+
+  def initialize_form
+    file = File.read('app/assets/jsonsample.json')
+    @form_service = JSON.parse(file, symbolize_names: :true)[:fields]
+  end
+
+  def generate_form
+
   end
 
   private
