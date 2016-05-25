@@ -1,8 +1,20 @@
-<div class = "banner" style="background-image: linear-gradient(-225deg, rgba(0,180,188,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path('banner.png') %>');">
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path('rio.jpg') %>');">
+
+  <div class="banner-content">
+    <h1>Resiliez en toute simplicité</h1>
+    <p>Nos experts ont donc décrypté pour vous les conditions d’engagement de nombreux services.</p>
+    <div class="search">
+      <%= link_to t(".top_call_to_action", default: "Commencer maintenant"), "#", id: "call-to-acton", class: "navbar-wagon-item navbar-wagon-button btn" %>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class = "banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<% image_path('rio.jpg') %>');">
 
   <div clas = "banner-content">
-    <h1>Tired of wasting time with paper forms ?</h1>
-    <p>Let's make it simple.</p>
+    <h1>Resiliez en toute simplicité</h1>
+    <p>Nos experts ont donc décrypté pour vous les conditions d’engagement de nombreux services</p>
   </div>
 </div>
 
@@ -10,7 +22,18 @@
 
 <div class="splash ios-zindex up animated fadeInUp">
   <div class="fp-arrow opaque">
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 127.3 52.8" style="enable-background:new 0 0 127.3 52.8;" width="50" height="40" xml:space="preserve">..</svg>
+    <form action="/spaces" method="get" class="form-inline">
+      <div class="form-group input-group">
+        <div class="input-group-addon">Work near</div>
+          <input type="text" class="form-control input-lg" name="address" placeholder="Paris" id="location" >
+        </div>
+        <div class="input-daterange input-group form-group banner-search" id="datepicker" wi>
+          <input type="text" class="input-sm form-control " name="start_at" placeholder=" Today" />
+          <span class="input-group-addon">to</span>
+          <input type="text" class="input-sm form-control form-inline" name="end_at" placeholder="End Date" />
+        </div>
+      <input class= "btn btn-primary btn-lg" type="submit" value="Search" />
+    </form>
   </div>
 </div>
 
@@ -40,3 +63,4 @@
       </div>
     </div>
   </div>
+ -->
