@@ -1,0 +1,63 @@
+{
+  "fields": [
+    {
+      "name" : "gender",
+      "label" : "Sexe",
+      "type" : "check_boxes",
+      "choices" : [ "male", "female"]
+    },
+    {
+      "name" : "gender",
+      "label" : "Sexe",
+      "type" : "radio_buttons",
+      "choices" : [ "male", "female"]
+    },
+    {
+      "name" : "firstname",
+      "label" : "Prénom",
+      "type" : "text",
+      "required" : true
+    },
+    {
+      "name" : "lastname",
+      "label" : "Nom",
+      "type" : "text",
+      "required" : true
+    },
+     {
+      "name" : "email",
+      "label" : "Email",
+      "type" : "text",
+      "required" : true
+    },
+
+    {
+      "name" : "address",
+      "label" : "Adresse",
+      "type" : "text",
+      "required" : true
+    },
+    {
+      "name" : "address_complement",
+      "label" : "Complément d' adresse",
+      "type" : "text"
+    },
+    {
+      "name" : "zipcode",
+      "label" : "Code postal",
+      "type" : "text",
+      "required" : true
+    },
+    {
+      "name" : "city",
+      "label" : "Ville",
+      "type" : "text",
+      "required" : true
+    },
+    {
+      "name" : "phone",
+      "label" : "Numéro de téléphone",
+      "type" : "text"
+    }
+  ]
+}
