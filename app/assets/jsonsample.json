@@ -1,26 +1,15 @@
 {
   "fields": [
-    {
-      "name" : "gender",
-      "label" : "Sexe",
-      "type" : "text",
-      "choices" : [ "male", "female"]
-    },
-    {
-      "name" : "gender",
-      "label" : "Sexe",
-      "type" : "radio",
-      "choices" : [ "male", "female"]
-    },
+
     {
       "name" : "firstname",
-      "label" : "Prénom",
+      "label" : "Nom",
       "type" : "text",
       "required" : true
     },
     {
       "name" : "lastname",
-      "label" : "Nom",
+      "label" : "Prénom",
       "type" : "text",
       "required" : true
     },
@@ -30,7 +19,6 @@
       "type" : "text",
       "required" : true
     },
-
     {
       "name" : "address",
       "label" : "Adresse",
