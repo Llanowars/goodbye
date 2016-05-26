@@ -30,7 +30,8 @@ gem 'rails-assets-bootstrap-datepicker'
 gem "gmaps4rails"
 gem "geocoder"
 gem 'carrierwave'
-
+gem 'pdfkit'
+gem 'wkhtmltopdf-binary'
 
 group :development, :test do
   gem 'binding_of_caller'
