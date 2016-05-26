@@ -7,18 +7,19 @@ class UnsubsController < ApplicationController
     initialize_hash
     @text_field = "text_field"
 
-    html = render_to_string(layout: true, action: "new")
-
-    kit = PDFKit.new(html, :page_size => 'Letter')
-    kit.stylesheets << Rails.root.to_s + "/public/" + view_context.asset_path("application.css")
-    kit.to_file("#{Rails.root}/tmp/test.pdf")
+    # html = render_to_string(layout: true, action: "new")
 
     # kit = PDFKit.new(html, :page_size => 'Letter')
-    # kit.stylesheets << Rails.root.to_s + "/public/assets/application-49e46c8435a0747ac9d8178ca011c4113a16f77937fd101831faaad71baa7427.css"
+    # kit.stylesheets << Rails.root.to_s + "/public/" + view_context.asset_path("application.css")
     # kit.to_file("#{Rails.root}/tmp/test.pdf")
+
+    # # kit = PDFKit.new(html, :page_size => 'Letter')
+    # # kit.stylesheets << Rails.root.to_s + "/public/assets/application-49e46c8435a0747ac9d8178ca011c4113a16f77937fd101831faaad71baa7427.css"
+    # # kit.to_file("#{Rails.root}/tmp/test.pdf")
   end
 
   def create
+    raise
     @user = User.new
     @user.firstname = params[:unsub][:form_complete][:firstname]
     @user.lastname = params[:unsub][:form_complete][:lastname]
