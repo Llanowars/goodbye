@@ -44,7 +44,7 @@ class UnsubsController < ApplicationController
   private
 
   def initialize_hash
-    file = File.read('app/assets/ugc.json')
+    file = File.read('app/assets/nested_form.json')
     @hash_service = JSON.parse(file, symbolize_names: :true)[:fields]
   end
 
