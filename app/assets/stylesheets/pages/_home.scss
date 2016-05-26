@@ -6,23 +6,27 @@
 .bullet-home {
   border: solid 1px #EE5F5B;
   width: 30px;
-  height: 20px;
-  padding: 5px 12px;
+  height: 30px;
   border-radius: 50%;
   background-color: #EE5F5B;
   color: #FFF;
   font-weight: bold;
   margin-right: 1em;
+  text-align: center;
 }
 
 .row-bg-image {
-
-    background-size: cover !important;
-    display: flex;
-    height: 400px;
-    background-position: right;
-    background-repeat:no-repeat;
+  background-size: cover !important;
+  display: flex;
+  height: 400px;
+  background-position: right;
+  background-repeat:no-repeat;
 }
+
 .row-home {
   height: 400px;
+}
+
+.flex-list li {
+  display: flex;
 }
