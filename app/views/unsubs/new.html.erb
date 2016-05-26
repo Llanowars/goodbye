@@ -1,22 +1,35 @@
-<div class="container">
+<div class="container min-height-screen">
   <%= form_tag(service_unsubs_path)  do %>
 
 
     <% @hash_service.each do |d| %>
-      <fieldset>
-        <%= label_tag(d[:label], d[:label]) %>
+      <fieldset class="custom-form">
         <% if  d[:type] == "radio"%>
+          <%= label_tag(d[:label], d[:label]) %>
           <% d[:choices].each do |c| %>
-            <%= content_tag(:input, c, type: d[:type], name: "unsub[form_complete[#{d[:name]}]]", class: "form-control") %>
+            <div>
+              <%= content_tag(:input, c[:value], type: d[:type], name: "unsub[form_complete[#{d[:name]}]]", class: "input-custom-radio") %>
+            </div>
+            <% if c[:type] == "radio" && c[:choices] %>
+              <fieldset class="sublevel">
+                <%= label_tag(c[:label], c[:label]) %>
+                <% c[:choices].each do |b| %>
+                <div>
+                  <%= content_tag(:input, b[:label], type: c[:type], name: "unsub[form_complete[#{c[:name]}]]", class: "input-custom-radio") %>
+                </div>
+                <% end %>
+              </fieldset>
+            <% end %>
           <% end %>
         <%else %>
-          <%= content_tag(:input, nil, type: d[:type], name: "unsub[form_complete[#{d[:name]}]]", class: "bg-red") %>
+        <%= label_tag(d[:label], d[:label]) %>
+        <%= content_tag(:input, nil, type: d[:type], name: "unsub[form_complete[#{d[:name]}]]", class: "input-custom") %>
         <% end %>
       </fieldset>
     <% end %>
       <div>
-        <%= form_tag "/profiles/update", :multipart => true %>
-        <%= file_field_tag :photo %>
+        <%= form_tag "/profiles/update", :multipart => true  %>
+        <%= file_field_tag :photo  %>
       </div>
     <%= submit_tag "validate" %>
   <% end %>
