@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
 
   resources :services do
-    resources :unsubs, only: [ :new, :create]
+    resources :unsubs, only: [ :new, :create, :show]
   end
 
   devise_for :users
   root to: 'pages#home'
 
-  get 'customform' => 'pages#customform'
+
 end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

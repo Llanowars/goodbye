@@ -1,14 +1,16 @@
 <div class="container">
   <%= form_tag(service_unsubs_path)  do %>
+
+
     <% @hash_service.each do |d| %>
       <fieldset>
         <%= label_tag(d[:label], d[:label]) %>
         <% if  d[:type] == "radio"%>
           <% d[:choices].each do |c| %>
-            <%= content_tag(:input, c, type: d[:type], name: "unsub_hash[#{d[:name]}]", class: "form-control") %>
+            <%= content_tag(:input, c, type: d[:type], name: "unsub[form_complete[#{d[:name]}]]", class: "form-control") %>
           <% end %>
         <%else %>
-          <%= content_tag(:input, nil, type: d[:type], name: "unsub_hash[#{d[:name]}]", ) %>
+          <%= content_tag(:input, nil, type: d[:type], name: "unsub[form_complete[#{d[:name]}]]", class: "bg-red") %>
         <% end %>
       </fieldset>
     <% end %>
