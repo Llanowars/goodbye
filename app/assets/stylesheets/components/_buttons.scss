@@ -1,0 +1,38 @@
+.btn-blue-neg {
+  border: solid 1px #30B1B7;
+  color: #30B1B7;
+  padding: 9px;
+  border-radius: 3px;
+  text-decoration: none;
+  margin-right: 30px;
+}
+
+.button-red {
+  margin-left: 10px;
+  padding: 0 20px;
+  border-radius: 4px;
+  line-height: 40px;
+  background-color: #EE5F5B;
+  color: white;
+  font-size: 16px;
+  border: 0px solid #1bf5af;
+}
+
+.button-red:hover {
+  color: #FFF;
+  text-decoration: none;
+  background-color: #E04541;
+}
+
+.button-red:focus {
+  color: #FFF;
+  text-decoration: none;
+  background-color: #E04541;
+}
+
+.button-with-icon img {
+ height: 25px;
+ vertical-align: middle;
+}
+
+
