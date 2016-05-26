@@ -1,0 +1,24 @@
+{
+  "name": "goodbye",
+  "version": "1.0.0",
+  "description": "Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates)",
+  "main": "index.js",
+  "dependencies": {
+    "manager": "^1.0.9",
+    "pdfkit": "^0.7.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/llanowars/goodbye.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/llanowars/goodbye/issues"
+  },
+  "homepage": "https://github.com/llanowars/goodbye#readme"
+}
