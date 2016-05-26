@@ -1,7 +1,10 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <i class="fa fa-unlock-alt"></i>
+    <div id="logo">
+      <img src="assets/logo-red.png"/>
+      <p>Fleeme</p>
+    </div>
   <% end %>
 
   <!-- Right Navigation -->
@@ -58,7 +61,8 @@
     <% end %>
 
     <!-- Button (call-to-action) -->
-    <%= link_to t(".top_call_to_action", default: "Commencer maintenant"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <a href="#howto" class="btn-blue-neg">Comment ça marche ?</a>
+    <%= link_to t(".top_call_to_action", default: "Commencer maintenant"), "#", class: "navbar-wagon-item button-red btn" %>
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
