@@ -1,10 +1,10 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path('rio.jpg') %>');">
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(255, 255, 255, 0.84) 32%, rgba(60, 52, 148, 0.02) 50%),  url('<%= image_path('sky.jpeg') %>');">
 
   <div class="banner-content">
     <h1>Résiliez en toute simplicité</h1>
-    <p>Nos experts ont décrypté pour vous vos conditions d’engagement.</p>
+    <p class="tx-blue">Nos experts ont décrypté pour vous vos conditions d’engagement.</p>
     <div class="search">
-      <%= link_to t(".top_call_to_action", default: "Commencer maintenant"), "#", id: "call-to-action", class: "navbar-wagon-item navbar-wagon-button btn" %>
+      <%= link_to t(".top_call_to_action", default: "Commencer maintenant #{image_tag('logo-icon.png')}".html_safe ), "#", class: "navbar-wagon-item button-red btn button-with-icon" %>
     </div>
   </div>
 </div>

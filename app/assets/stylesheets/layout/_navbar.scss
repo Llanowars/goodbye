@@ -10,7 +10,17 @@
   justify-content: space-between;
 }
 
-.fa-home {
+
+.navbar-wagon #logo img{
+  height: 50px
+}
+
+.navbar-wagon #logo p {
+  display: inline;
+  color: #30B1B7
+}
+
+.fa-unlock-alt {
   font-size: 2.0em;
   color: rgba(27, 245, 175, 1);
 }
