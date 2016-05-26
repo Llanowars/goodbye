@@ -39,7 +39,7 @@ class UnsubsController < ApplicationController
   private
 
   def initialize_hash
-    file = File.read('app/assets/user.json')
+    file = File.read('app/assets/ugc.json')
     @hash_service = JSON.parse(file, symbolize_names: :true)[:fields]
   end
 

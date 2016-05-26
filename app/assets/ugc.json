@@ -1,11 +1,62 @@
 {
   "fields": [
     {
+      "name" : "firstname",
+      "label" : "Prénom",
+      "type" : "string",
+      "required" : true
+    },
+    {
+      "name" : "lastname",
+      "label" : "Nom",
+      "type" : "string",
+      "required" : true
+    },
+     {
+      "name" : "email",
+      "label" : "Email",
+      "type" : "string",
+      "required" : true
+    },
+    {
+      "name" : "address",
+      "label" : "Adresse",
+      "type" : "string",
+      "required" : true
+    },
+    {
+      "name" : "address_complement",
+      "label" : "Complément d' adresse",
+      "type" : "string"
+    },
+    {
+      "name" : "zipcode",
+      "label" : "Code postal",
+      "type" : "string",
+      "required" : true
+    },
+    {
+      "name" : "city",
+      "label" : "Ville",
+      "type" : "string",
+      "required" : true
+    },
+    {
+      "name" : "phone",
+      "label" : "Numéro de téléphone",
+      "type" : "string"
+    },
+    {
+      "name" : "numero_abonne",
+      "label" : "Numéro de votre carte UGC illimité",
+      "type" : "string"
+    },
+    {
       "name" : "engagement",
       "label" : "Date de votre insciption à UGC",
-      "type" : "radio_buttons",
+      "type" : "radio",
       "required" : true,
-      "options" :
+      "choices" :
       [
         "Plus d' 1 an",
         "Moins de 14 jours",
