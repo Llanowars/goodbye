@@ -12,9 +12,11 @@ class UnsubsController < ApplicationController
     kit = PDFKit.new(html, :page_size => 'Letter')
     kit.stylesheets << Rails.root.to_s + "/public/" + view_context.asset_path("application.css")
     kit.to_file("#{Rails.root}/tmp/test.pdf")
+
   end
 
   def create
+    raise
     @user = User.new
     @user.firstname = params[:unsub][:form_complete][:firstname]
     @user.lastname = params[:unsub][:form_complete][:lastname]
