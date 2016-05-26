@@ -1,19 +1,31 @@
+<%= render 'shared/navbar' %>
+
 <div class="container text-center">
   <button type="button" class="btn btn-success" id="start-button">Start</button>
 </div>
 <div class="container">
-  <%= simple_form_for ([@service, @unsub])  do |f| %>
-    <% @form_service.each do |d| %>
-      <% if d[:type] != "text" %>
-        <%= f.input :form_complete, label:  d[:label], as: d[:type], collection: d[:choices] %>
-        <%= f.button :submit, "next", class: "btn-success" %>
-      <% else %>
-        <%= f.input :form_complete, label:  d[:label], as: d[:type] %>
-        <%= f.button :submit, "next", class: "btn-success" %>
-      <%end%>
+  <%= form_tag(service_unsubs_path)  do %>
+    <% @hash_service.each do |d| %>
+      <fieldset>
+        <%= label_tag(d[:label], d[:label]) %>
+        <% if  d[:type] == "radio"%>
+          <% d[:choices].each do |c| %>
+            <%= content_tag(:input, c, type: d[:type], name: "unsub_hash[#{d[:name]}]", class: "form-control") %>
+          <% end %>
+        <%else %>
+          <%= content_tag(:input, nil, type: d[:type], name: "unsub_hash[#{d[:name]}]", class: "bg-red") %>
+        <% end %>
+      </fieldset>
     <% end %>
-    <%= f.button :submit,  class: "btn-success" %>
+      <div>
+        <%= form_tag "/profiles/update", :multipart => true %>
+        <%= file_field_tag :photo %>
+      </div>
+    <%= submit_tag "validate" %>
   <% end %>
 </div>
+
+
+
 
 

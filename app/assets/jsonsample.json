@@ -3,13 +3,13 @@
     {
       "name" : "gender",
       "label" : "Sexe",
-      "type" : "check_boxes",
+      "type" : "text",
       "choices" : [ "male", "female"]
     },
     {
       "name" : "gender",
       "label" : "Sexe",
-      "type" : "radio_buttons",
+      "type" : "radio",
       "choices" : [ "male", "female"]
     },
     {
@@ -61,3 +61,7 @@
     }
   ]
 }
+
+
+
+

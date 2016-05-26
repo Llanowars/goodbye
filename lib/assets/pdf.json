@@ -1,6 +1,6 @@
 {"purpose":[
 
-    {"résiliation à l' issu de la pèriode initiale":"Je vous informe aujourd'hui par cette lettre envoyée en recommandé, que je souhaite mettre fin à mon abonnement souscrit auprès de votre établissement, sous le numéro d'abonné [[num_abonne]].
+    {"résiliation à l'issu de la pèriode initiale":"Je vous informe aujourd'hui par cette lettre envoyée en recommandé, que je souhaite mettre fin à mon abonnement souscrit auprès de votre établissement, sous le numéro d'abonné [[num_abonne]].
 Ma période d'engagement étant achevée, je ne souhaite pas renouveler mon abonnement à votre salle de cinéma. Je vous annonce donc ma décision de résilier mon abonnement, et vous prie de prendre les mesures adéquates pour mettre fin au contrat qui nous lie.
 Je vous remercie de prendre en compte ma demande dès réception de ce courrier recommandé, et de m'envoyer en retour un courrier me confirmant le terme de mon contrat."},
 
@@ -11,7 +11,8 @@ Je vous remercie de prendre en compte ma demande dès réception de ce courrier 
 
 
 
-    {"fermeture ou sortie du système d' abonnement d' un cinéma":"Je vous informe aujourd'hui par cette lettre envoyée en recommandé, que je souhaite mettre fin à mon abonnement souscrit auprès de votre société, sous le numéro d'abonné [[num_abonne]], suite à la fermeture du cinéma situé près de mon domicile
+  {"name" :"fermeture ou sortie du système d' abonnement d' un cinéma",
+    "content" : "Je vous informe aujourd'hui par cette lettre envoyée en recommandé, que je souhaite mettre fin à mon abonnement souscrit auprès de votre société, sous le numéro d'abonné [[num_abonne]], suite à la fermeture du cinéma situé près de mon domicile
 Les conditions générales de vente de mon contrat me permettent de résilier mon abonnement dans la mesure où le cinéma situé près de chez moi a fermé ou est sorti du système d'abonnement de votre réseau. Ne pouvant donc plus utiliser ma carte de cinéma, j'invoque mon droit à résilier sans frais mon contrat.
 Je vous remercie de prendre en compte ma demande dès réception de ce courrier recommandé, et de me rembourser les sommes trop perçues, correspondant aux mois pendant lesquels je n'ai pas pu profiter de mon abonnement. "}
 
