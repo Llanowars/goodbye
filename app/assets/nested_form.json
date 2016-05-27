@@ -88,7 +88,7 @@
               "type" : "string"
             },
             {
-              "name" : "health_problem",
+              "name" : "health",
               "label" : "Mon état de santé ne me permet plus de profiter de vos services",
               "type" : "string"
             }
