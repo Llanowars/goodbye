@@ -9,7 +9,7 @@ class UnsubsController < ApplicationController
   end
 
   def create
-    raise
+
     @user = User.new
     @user.firstname = params[:unsub][:form_complete][:firstname]
     @user.lastname = params[:unsub][:form_complete][:lastname]

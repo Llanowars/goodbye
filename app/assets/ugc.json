@@ -50,52 +50,7 @@
       "name": "numero_abonne",
       "label": "Numéro de votre carte UGC illimité",
       "type": "string"
-    },
-    {
-      "name": "engagement",
-      "label": "Date de votre insciption à UGC",
-      "type": "radio",
-      "required": true,
-      "choices": [
-        {
-          "name": "purpose",
-          "value": "Plus d'1 an",
-          "type": "string"
-        },
-        {
-          "name": "purpose",
-          "value": "Moins de 14 jours",
-          "type": "string"
-        },
-        {
-          "name": "purpose",
-          "label": "Justification",
-          "value" : "Moins d'1 an",
-          "type": "radio",
-          "choices" : [
-            {
-              "name" : "reason",
-              "label" : "Déménagement hors zone",
-              "type" : "string"
-            },
-            {
-              "name" : "reason",
-              "label" : "UGC a modifié ses tarifs",
-              "type" : "string"
-            },
-            {
-              "name" : "reason",
-              "label" : "Le Cinéma près de chez moi n' est plus affilié à votre réseau ou a fermé",
-              "type" : "string"
-            },
-            {
-              "name" : "reason",
-              "label" : "Mon état de santé ne me permet plus de profiter de vos services",
-              "type" : "string"
-            }
-          ]
-        }
-      ]
     }
+
   ]
 }
