@@ -1,0 +1,100 @@
+{
+  "fields": [
+    {
+      "name": "firstname",
+      "label": "Prénom",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "lastname",
+      "label": "Nom",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "email",
+      "label": "Email",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "address",
+      "label": "Adresse",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "address_complement",
+      "label": "Complément d' adresse",
+      "type": "string"
+    },
+    {
+      "name": "zipcode",
+      "label": "Code postal",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "city",
+      "label": "Ville",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "phone",
+      "label": "Numéro de téléphone",
+      "type": "string"
+    },
+    {
+      "name": "numero_abonne",
+      "label": "Numéro de votre carte UGC illimité",
+      "type": "string"
+    },
+    {
+      "name": "engagement",
+      "label": "Date de votre insciption à UGC",
+      "type": "radio",
+      "required": true,
+      "choices": [
+        {
+          "name": "more_than_1_year",
+          "label": "Plus d'1 an",
+          "type": "string"
+        },
+        {
+          "name": "less_than_14_days",
+          "label": "Moins de 14 jours",
+          "type": "string"
+        },
+        {
+          "name": "purpose",
+          "label": "Moins d'1 an",
+          "type": "radio",
+          "choices" : [
+            {
+              "name" : "moved",
+              "label" : "Déménagement hors zone",
+              "type" : "string"
+            },
+            {
+              "name" : "price_change",
+              "label" : "UGC a modifié ses tarifs",
+              "type" : "string"
+            },
+            {
+              "name" : "service_closed",
+              "label" : "Le Cinéma près de chez moi n' est plus affilié à votre réseau ou a fermé",
+              "type" : "string"
+            },
+            {
+              "name" : "health",
+              "label" : "Mon état de santé ne me permet plus de profiter de vos services",
+              "type" : "string"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
