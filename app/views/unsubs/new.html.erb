@@ -1,55 +1,52 @@
 <div class="container ">
-<div class="row">
-  <div class="col-lg-7 min-height-screen">
-    <%= form_tag(service_unsubs_path)  do %>
-    <h2 class="tx-blue">Fleeme a quelques questions à vous poser</h2>
-    <% @hash_service.each do |d| %>
-          <fieldset class="custom-form initial-pos">
-            <% if  d[:type] == "radio"%>
-              <%= label_tag(d[:label], d[:label]) %>
-              <%= hidden_field_tag("unsub[form_complete[#{d[:name]}]]", nil, id: "hidden_field") %>
-              <% d[:choices].each do |c| %>
-                <div class="radio_clickable_div">
-                  <%= c[:value] %>
-                </div>
-                <% if c[:type] == "radio" && c[:choices] %>
-                  <fieldset class="sublevel ">
-                    <%= label_tag(c[:label], c[:label]) %>
-                    <% c[:choices].each do |b| %>
-                    <div class="radio-field">
-                      <%= content_tag(:input, b[:label], type: c[:type], name: "unsub[form_complete[#{c[:name]}]]", class: "input-custom-radio") %>
-                    </div>
-                    <% end %>
-                  </fieldset>
-                <% end %>
-              <% end %>
-            <%else %>
+  <div class="row">
+    <div class="col-lg-7 min-height-screen">
+      <%= form_tag(service_unsubs_path)  do %>
+      <h2 class="tx-blue">Fleeme a quelques questions à vous poser</h2>
+      <% @hash_service.each do |d| %>
+        <fieldset class="custom-form initial-pos">
+          <% if  d[:type] == "radio"%>
             <%= label_tag(d[:label], d[:label]) %>
-            <%= content_tag(:input, nil, type: d[:type], name: "unsub[form_complete[#{d[:name]}]]", class: "input-custom ") %>
+            <%= hidden_field_tag("unsub[form_complete[#{d[:name]}]]", nil, id: "hidden_field") %>
+            <% d[:choices].each do |c| %>
+              <div class="radio_clickable_div">
+                <%= c[:value] %>
+              </div>
+              <% if c[:type] == "radio" && c[:choices] %>
+                <fieldset class="sublevel ">
+                  <%= label_tag(c[:label], c[:label]) %>
+                  <% c[:choices].each do |b| %>
+                  <div class="radio-field">
+                    <%= content_tag(:input, b[:label], type: c[:type], name: "unsub[form_complete[#{c[:name]}]]", class: "input-custom-radio") %>
+                  </div>
+                  <% end %>
+                </fieldset>
+              <% end %>
             <% end %>
-            <div class="btn-blue-neg" id="next-button">Suivant<div>
-          </fieldset>
+          <%else %>
+          <%= label_tag(d[:label], d[:label]) %>
+          <%= content_tag(:input, nil, type: d[:type], name: "unsub[form_complete[#{d[:name]}]]", class: "input-custom ") %>
+          <% end %>
+          <div class="btn-blue-neg" id="next-button">Suivant<div>
+        </fieldset>
         <% end %>
-          <div class="initial-pos upload-file">
-            <%= form_tag "/profiles/update", :multipart => true  %>
-            <%= file_field_tag :photo  %>
-          </div>
+        <div class="initial-pos upload-file">
+          <%= form_tag "/profiles/update", :multipart => true  %>
+          <%= file_field_tag :photo  %>
+        </div>
         <%= submit_tag "validate", class: "initial-pos validate-form" %>
-      <% end %>
-  </div>
-  <div class="col-lg-5">
+    <% end %>
+    </div>
+    <div class="col-lg-5">
       <h2 class="text-center">Aperçu</h2>
-    <div class="letter-container">
-
-
-      <ul id="preview-letter" class="list-unstyled">
-
-      </ul>
-
+      <div class="letter-container">
+        <ul id="preview-letter" class="list-unstyled">
+        </ul>
+      </div>
     </div>
   </div>
 </div>
-</div>
+
 
 
 

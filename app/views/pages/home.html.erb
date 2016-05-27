@@ -9,7 +9,7 @@
             <img src="<%= image_path('ugcilli.png') %>">
             <p>UGC Illimité</p>
           </div>
-          <button class="button-red">Résilier</button>
+          <%= button_to "Résilier", "/services/1/unsubs/new", class: "button-red", method: :get %>
         </div>
         <div class="col-lg-4 col-sm-6">
           <div class="card-service">
@@ -45,10 +45,10 @@
     <div class="col-lg-4 col-lg-offset-2 col-xs-12">
       <h3  class="tx-red padded-1">Comment ça marche ?</h3>
       <ul class="list-unstyled flex-list">
-        <li class="padded-1"><div class="bullet-home">1</div><p>Renseignez les informations demandées</p></li>
-        <li class="padded-1"><div class="bullet-home">2</div><p>Validez votre demande de désabonnement</p></li>
+        <li class="padded-1"><div class="bullet-home">1</div><p>Complétez les informations demandées</p></li>
+        <li class="padded-1"><div class="bullet-home">2</div><p>Fleeme génère dynamiquement le courrier adapté à votre situation</p></li>
         <li class="padded-1"><div class="bullet-home">3</div><p>Recevez une confirmation quand le recommandé est envoyé</p></li>
-        <li class="padded-1"><div class="bullet-home">4</div><p>Vous êtes libre !</p></li>
+        <li class="padded-1"><div class="bullet-home">4</div><p>Résilier n' a jamais été aussi simple !</p></li>
       </ul>
     </div>
     <div class="col-lg-6   hidden-md">
