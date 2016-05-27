@@ -30,3 +30,24 @@
 .flex-list li {
   display: flex;
 }
+
+.full-height {
+  min-height: 100vh;
+}
+
+.card-service {
+  height: 200px;
+
+}
+
+.card-service img {
+  width: 180px;
+  border-radius: 8px;
+}
+
+.card-service p {
+  font-size: 1.3em;
+  padding-top: 1em;
+  color: #F3FAFB;
+  padding-bottom: 2em;
+}

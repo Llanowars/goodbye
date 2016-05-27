@@ -7,6 +7,18 @@
   margin-right: 30px;
 }
 
+.btn-blue-neg:hover {
+  color: #30B1B7;
+  text-decoration: none;
+  background-color: #F5F5F5;
+}
+
+.btn-blue-neg:focus {
+  color: #30B1B7;
+  text-decoration: none;
+  background-color: #F5F5F5;
+}
+
 .button-red {
   margin-left: 10px;
   padding: 0 20px;
@@ -36,3 +48,13 @@
 }
 
 
+.btn-white-neg {
+  margin-left: 10px;
+  padding: 0 20px;
+  border-radius: 4px;
+  line-height: 40px;
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  border: 1px solid #FFFFFF;
+}
