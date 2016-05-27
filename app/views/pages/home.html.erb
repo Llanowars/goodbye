@@ -1,18 +1,49 @@
 <%= render 'shared/banner' %>
-<div class="wrapper bg-blue">
-  <div class="row padded-2">
-    <h3 class="tx-white text-center padded-1">Services disponibles</h3>
-    <ul class="list-unstyled list-inline text-center padded-2">
-      <li><img src="http://placehold.it/150x50"></li>
-      <li><img src="http://placehold.it/150x50"></li>
-      <li><img src="http://placehold.it/150x50"></li>
-    </ul>
+<div class="wrapper bg-blue full-height" id="services">
+  <div class="container">
+    <div class="row padded-2 ">
+      <h3 class="tx-white text-center padded-1" >Services disponibles</h3>
+      <div class="container text-center">
+        <div class="col-lg-4">
+          <div class="card-service">
+            <img src="<%= image_path('ugcilli.png') %>">
+            <p>UGC Illimité</p>
+          </div>
+          <button class="button-red">Résilier</button>
+        </div>
+        <div class="col-lg-4">
+          <div class="card-service">
+            <img src="<%= image_path('gaumont.png') %>">
+            <p>Carte Gaumont Le Pass</p>
+          </div>
+          <button class="button-red">Résilier</button>
+        </div>
+        <div class="col-lg-4">
+          <div class="card-service">
+            <img src="<%= image_path('canal.png') %>">
+            <p>Canal+</p>
+          </div>
+          <button class="button-red">Résilier </button>
+        </div>
+      </div>
+    </div>
+    <div class="row padded-2 text-center tx-white">
+      <div class="col-lg-6 col-lg-offset-3">
+        <h4>Le service que vous voulez résilier n'est pas encore disponible sur Fleeme ?</h4>
+        <p>Donnez-nous son nom pour qu'il soit ajouté rapidement</p>
+        <form>
+        <fieldset class="form-group">
+          <input type="text" class="form-control form-lg" id="" placeholder="">
+        </fieldset>
+        <button class="btn-white-neg">Ajoutez le vite !</button>
+      </div>
+    </div>
   </div>
 </div>
-<div class="wrapper">
+<div class="wrapper" id="howto">
   <div class="row row-home">
     <div class="col-lg-4 col-lg-offset-2 col-xs-12">
-      <h3 id="howto" class="tx-red padded-1">Comment ça marche ?</h3>
+      <h3  class="tx-red padded-1">Comment ça marche ?</h3>
       <ul class="list-unstyled flex-list">
         <li class="padded-1"><div class="bullet-home">1</div><p>Renseignez les informations demandées</p></li>
         <li class="padded-1"><div class="bullet-home">2</div><p>Validez votre demande de désabonnement</p></li>
