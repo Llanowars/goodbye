@@ -19,7 +19,6 @@ class UnsubsController < ApplicationController
   end
 
   def create
-    raise
     @user = User.new
     @user.firstname = params[:unsub][:form_complete][:firstname]
     @user.lastname = params[:unsub][:form_complete][:lastname]
@@ -28,6 +27,7 @@ class UnsubsController < ApplicationController
     @user.zipcode = params[:unsub][:form_complete][:zipcode]
     @user.city = params[:unsub][:form_complete][:city]
     @user.phone = params[:unsub][:form_complete][:phone]
+    @user.email = params[:unsub][:form_complete][:email]
     @user.save
 
     @service = Service.find(params[:service_id])
@@ -44,6 +44,8 @@ class UnsubsController < ApplicationController
 
   def show
     @unsub = Unsub.find(params[:id])
+
+    html = render_to_string(layout: true, action: "new")
 
     kit = PDFKit.new(html, :page_size => 'Letter')
     kit.stylesheets << Rails.root.to_s + "/public/assets/application-49e46c8435a0747ac9d8178ca011c4113a16f77937fd101831faaad71baa7427.css"
