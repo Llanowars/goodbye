@@ -7,22 +7,18 @@ class UnsubsController < ApplicationController
     initialize_hash
     @text_field = "text_field"
 
-<<<<<<< HEAD
+
     # html = render_to_string(layout: true, action: "new")
-=======
-    html = render_to_string(layout: true, action: "new")
->>>>>>> master
 
     # kit = PDFKit.new(html, :page_size => 'Letter')
     # kit.stylesheets << Rails.root.to_s + "/public/" + view_context.asset_path("application.css")
     # kit.to_file("#{Rails.root}/tmp/test.pdf")
 
-<<<<<<< HEAD
-    # # kit = PDFKit.new(html, :page_size => 'Letter')
-    # # kit.stylesheets << Rails.root.to_s + "/public/assets/application-49e46c8435a0747ac9d8178ca011c4113a16f77937fd101831faaad71baa7427.css"
-    # # kit.to_file("#{Rails.root}/tmp/test.pdf")
-=======
->>>>>>> master
+
+     # kit = PDFKit.new(html, :page_size => 'Letter')
+    # kit.stylesheets << Rails.root.to_s + "/public/assets/application-49e46c8435a0747ac9d8178ca011c4113a16f77937fd101831faaad71baa7427.css"
+     # kit.to_file("#{Rails.root}/tmp/test.pdf")
+
   end
 
   def create
@@ -51,6 +47,7 @@ class UnsubsController < ApplicationController
   end
 
   def show
+
     @unsub = Unsub.find(params[:id])
 
 
@@ -60,12 +57,14 @@ class UnsubsController < ApplicationController
 
     @unsub = Unsub.find(params[:unsub_id])
 
-    html = render_to_string(layout: true, action: "show")
+    html = render_to_string(layout: false, action: "show")
 
     kit = PDFKit.new(html, :page_size => 'Letter')
     kit.stylesheets << Rails.root.to_s + "/public/" + view_context.asset_path("application.css")
-    kit.to_file("#{Rails.root}/tmp/test.pdf")
-  end
+
+    send_data kit.to_pdf, :filename => "file.pdf",
+                          :type => "application/pdf"
+    end
 
   def send_email
     @unsub = Unsub.find(params[:unsub_id])
