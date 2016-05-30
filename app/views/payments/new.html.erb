@@ -1,8 +1,8 @@
 <div class="text-center"><%= form_tag do %>
-  <h1>Almost done </h1>
+  <h1>Récapitulatif de votre commande</h1>
     <article>
       <label class="amount">
-        <span>Amount: <%= humanized_money_with_symbol(@unsub.price_cents) %></span>
+        <span>Prix: <%= humanized_money_with_symbol(@unsub.price_cents) %></span>
       </label>
     </article>
 

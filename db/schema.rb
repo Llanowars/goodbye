@@ -16,15 +16,6 @@ ActiveRecord::Schema.define(version: 20160530100724) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "orders", force: :cascade do |t|
-    t.string   "state"
-    t.string   "order_sku"
-    t.integer  "amount_cents", default: 0, null: false
-    t.json     "payment"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-  end
-
   create_table "services", force: :cascade do |t|
     t.string   "name"
     t.string   "company"
