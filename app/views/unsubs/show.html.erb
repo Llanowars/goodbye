@@ -21,8 +21,11 @@
               <li>- Réception de l'accusé de réception sur votre boîte mail</li>
             </ul>
           </div>
-          <div class="col-lg-4 col-sm-12">
-            <button class="button-red vcenter">Continuer</button>
+            <div class="col-lg-4 col-sm-12">
+              <%= form_tag orders_path do %>
+              <%= hidden_field_tag 'unsub_id', @unsub.id %>
+              <%= submit_tag 'Continuer', class: "button-red vcenter"%>
+            <% end %>
           </div>
         </div>
       </div>

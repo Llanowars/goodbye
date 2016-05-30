@@ -1,11 +1,12 @@
 class OrdersController < ApplicationController
   def show
+    @order = Order.where(state: 'paid').find(params[:id])
   end
 
   def create
     @unsub = Unsub.find(params[:unsub_id])
-    @order = Order.create!(unsub_sku: @unsub.sku, amount: @unsub.price, state: 'pending')
-    redirect_to new_order_payment_path(order)
+    @order = Order.create!(amount: @unsub.price, state: 'pending')
+    redirect_to payments_new_path
   end
 end
 
