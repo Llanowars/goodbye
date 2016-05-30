@@ -23,6 +23,7 @@
         $(this).parent().addClass('move-mid-top');
         name = $(this).val();
         $('#preview-letter').append("<li>" + name + "</li>");
+        $(this).parent().next().focus;
 
       }
       else if ( $( this ).parent().hasClass('move-top-mid') ) {
@@ -51,11 +52,9 @@
     });
 
     $('#next-button').focus(function() {
-      $('#next-button').blur();
-      $('#next-button').next().focus();
-      $('#input-2').focus();
-      name = $(this).prev().val();
-      $('#input-1-value').append(name);
+      $(this).blur();
+      $(this).prev().blur();
+      $(this).parent().next().find('input').focus();
   });
 
 

@@ -1,44 +1,112 @@
-<div class="container min-height-screen">
-  <div class="user">
-    <p class="text-left"><%= @unsub.form_complete["firstname"] %> <%= @unsub.form_complete["lastname"] %></p>
-    <p class="text-left"><%= @unsub.form_complete["address"] %></p>
-    <p class="text-left"><%= @unsub.form_complete["address_complement"] %></p>
-    <p class="text-left"><%= @unsub.form_complete["zipcode"] %> <%= @unsub.form_complete["city"] %></p>
+<div class="container min-height-screen padded-5">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-sm-12">
+      <div class="card-confirmation-title text-center padded-1">
+        <h4>Vos options pour votre résiliation</h4>
+      </div>
+    </div>
   </div>
-
-  <div class="service">
-    <p class="text-right"><%= @unsub.service.company %></p>
-    <p class="text-right"><%= @unsub.service.name %></p>
-    <p class="text-right"><%= @unsub.service.postal_box %></p>
-    <p class="text-right"><%= @unsub.service.zip_code %> <%= @unsub.service.city %></p>
-  </div>
-
-  <div class="date">
-    <p class="text-right"><%= @unsub.form_complete["city"] %>, le <%= Date.today.strftime("%d-%m-%Y") %></p>
-  </div>
-
-
-  <div class="object">
-   <p> Objet: Résiliation de la carte cinéma, référence client N° <%= @unsub.form_complete["numero_abonne"] %> </p>
-  </div>
-
-  <div class="body">
-    <p>Madame, Monsieur,</p>
-
-    <p></p>
-
-    <p>Veuillez accepter Madame, Monsieur, l' expression de mes salutations distinguées.</p>
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2  col-sm-12">
+      <div class="card-confirmation">
+        <div class="row">
+          <div class="col-lg-8 col-sm-12">
+            <h3>Envoi Fleeme automatique</h3>
+            <h4>7,99 €</h4>
+            <ul class="list-unstyled">
+              <li>- Génération de votre lettre recommandée de résiliation personnalisée</li>
+              <li>- Envoi immédiat de votre lettre à <%= @unsub.service.company%></li>
+              <li>- Réception d'une copie de la lettre envoyée sur votre boîte mail au format PDF</li>
+              <li>- Réception de l'accusé de réception sur votre boîte mail</li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-sm-12">
+            <button class="button-red vcenter">Continuer</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </div>
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-sm-12">
+      <div class="card-confirmation">
+        <div class="row">
+          <div class="col-lg-8 col-sm-12">
+            <h3>Lettre personnalisée sans envoi</h3>
+            <h4>Gratuit</h4>
+            <ul class="list-unstyled">
+              <li>- Génération de votre lettre de résiliation personnalisée</li>
+              <li>- Réception de votre lettre sur votre boîte mail au format PDF</li>
 
-  <div class="signature">
-    <p><%= @unsub.form_complete["firstname"] %> <%= @unsub.form_complete["lastname"] %></p>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-sm-12">
+            <button class="btn-blue-neg" onclick="shareOnFB();">Partager sur Facebook</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Votre lettre personnalisée</h4>
+      </div>
+      <div class="modal-body">
+        <p><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>Merci pour votre partage.</p>
+        <p>Cliquez sur "Télécharger ma lettre" ci-dessous pour obtenir votre lettre de résiliation au format PDF.</p>
+        <p>Votre demande de résiliation doit être envoyée à l'adresse suivante:</p>
+        <div class="card-address-service">
+          <p><%= @unsub.service.company%></p>
+          <p><%= @unsub.service.name%></p>
+          <p><%= @unsub.service.street_address%></p>
+          <p><%= @unsub.service.zip_code%>, <%= @unsub.service.city%></p>
+        </div>
+      </div>
+      <div class="modal-footer text-center">
+        <button type="button" class="btn button-red"><i class="fa fa-file-text-o" aria-hidden="true"></i> Télécharger ma lettre</button>
+        <hr>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script>
+function shareOnFB() {
+ FB.ui({
+        method: "feed",
+        link: "www.fleeme.fr",
+        picture: "http://2d28c608.ngrok.io/assets/fbpicture.jpg",
+        name:"<%= meta_title %>",
+        caption: 'www.fleeme.fr',
+        description: "<%= meta_description %>"
+      }, function(t){
+        var str = JSON.stringify(t);
+        var obj = JSON.parse(str);
+        if(obj.post_id != '')
+        {
+           console.log("Successfull sharing !");
+           $('#myModal').modal('show');
+        }
+      });
+}
 
-
-<%= link_to service_unsub_generate_pdf_path(@unsub.service, @unsub), :class => "btn btn-large btn-danger" do %> Download Now <% end %>
-
-<%= link_to service_unsub_send_email_path(@unsub.service, @unsub), :class => "btn btn-large btn-success" do %> Send by Email <% end %>
-
-
+</script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=230165427375572=&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+>>>>>>> master
