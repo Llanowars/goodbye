@@ -1,39 +1,52 @@
 
-<div class="container min-height-screen">
-  <div class="user">
-    <p><%= @unsub.form_complete["firstname"] %> <%= @unsub.form_complete["lastname"] %></p>
-    <p><%= @unsub.form_complete["address"] %></p>
-    <p><%= @unsub.form_complete["address_complement"] %></p>
-    <p><%= @unsub.form_complete["zipcode"] %> <%= @unsub.form_complete["city"] %></p>
+<div class="container min-height-screen padded-5">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-sm-12">
+      <div class="card-confirmation-title text-center padded-1">
+        <h4>Vos options pour votre résiliation</h4>
+      </div>
+    </div>
   </div>
-
-  <div class="service">
-    <p><%= @unsub.service.company %></p>
-    <p><%= @unsub.service.name %></p>
-    <p><%= @unsub.service.postal_box %></p>
-    <p><%= @unsub.service.zip_code %> <%= @unsub.service.city %></p>
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2  col-sm-12">
+      <div class="card-confirmation">
+        <div class="row">
+          <div class="col-lg-8 col-sm-12">
+            <h3>Envoi Fleeme automatique</h3>
+            <h4>7,99 €</h4>
+            <ul class="list-unstyled">
+              <li>- Génération de votre lettre recommandée de résiliation personnalisée</li>
+              <li>- Envoi immédiat de votre lettre à <%= @unsub.service.company%></li>
+              <li>- Réception d'une copie de la lettre envoyée sur votre boîte mail au format PDF</li>
+              <li>- Réception de l'accusé de réception sur votre boîte mail</li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-sm-12">
+            <button class="button-red vcenter">Continuer</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-sm-12">
+      <div class="card-confirmation">
+        <div class="row">
+          <div class="col-lg-8 col-sm-12">
+            <h3>Lettre personnalisée sans envoi</h3>
+            <h4>Gratuit</h4>
+            <ul class="list-unstyled">
+              <li>- Génération de votre lettre de résiliation personnalisée</li>
+              <li>- Réception de votre lettre sur votre boîte mail au format PDF</li>
 
-  <div class="date">
-    <p><%= @unsub.form_complete["city"] %>, le <%= Date.today.strftime("%d-%m-%Y") %></p>
-  </div>
-
-
-  <div class="object">
-   <p> Objet: Résiliation de la carte cinéma, référence client N° <%= @unsub.form_complete["numero_abonne"] %> </p>
-  </div>
-
-  <div class="body">
-    <p>Madame, Monsieur</p>
-
-    <p></p>
-
-    <p>Veuillez accepter Madame, Monsieur l' expression de mes salutations distinguées.</p>
-
-  </div>
-
-  <div class="signature">
-    <p><%= @unsub.form_complete["firstname"] %> <%= @unsub.form_complete["lastname"] %></p>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-sm-12">
+            <button class="btn-blue-neg">Partager sur Facebook</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
