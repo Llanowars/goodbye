@@ -30,6 +30,7 @@ class UnsubsController < ApplicationController
     @service = Service.find(params[:service_id])
     @unsub = Unsub.new(unsub_params)
     @unsub.form_complete = params[:unsub][:form_complete]
+    @unsub.price = 799
 
     @unsub.service = @service
     if @unsub.save
