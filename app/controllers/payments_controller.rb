@@ -1,38 +1,33 @@
 class PaymentsController < ApplicationController
 
   def new
-    @order = Order.new
+    @unsub = Unsub.find(params[:unsub_id])
   end
 
   def create
-  @amount = @order.amount_cents
+    @unsub = Unsub.find(params[:unsub_id])
+    @amount = @unsub.price_cents
 
-  customer = Stripe::Customer.create(
-    source: params[:stripeToken],
-    email: params[:stripeEmail]
-  )
-  # You should store this customer id and re-use it.
+    customer = Stripe::Customer.create(
+      source: params[:stripeToken],
+      email: params[:stripeEmail]
+    )
+    # You should store this customer id and re-use it.
 
-  charge = Stripe::Charge.create(
-    customer: customer.id,
-    amount:       @amount,  # in cents
-    description:  "Payment for teddy #{@order.teddy_sku} for order #{@order.id}",
-    currency:     'eur'
-  )
+    charge = Stripe::Charge.create(
+      customer: customer.id,
+      amount:       @amount,  # in cents
+      description:  "Payment for unsub #{} for order #{}",
+      currency:     'eur'
+    )
 
-  @order.update(payment: charge.to_json, state: 'paid')
+    #@order.update(payment: charge.to_json, state: 'paid')
 
-  redirect_to order_path(@order)
+    #redirect_to _path(@order)
 
-rescue Stripe::CardError => e
-  flash[:error] = e.message
-  redirect_to new_order_payment_path(@order)
-end
-
-  private
-
-  def set_order
-    @order = Order.where(state: 'pending').find(params[:order_id])
+    rescue Stripe::CardError => e
+      flash[:error] = e.message
+      redirect_to unsub_payments_path(@unsub)
   end
 
 end

@@ -1,8 +1,9 @@
-<h1>Almost done <%= @order %></h1>
+<h1>Almost done </h1>
+
 <%= form_tag do %>
   <article>
     <label class="amount">
-      <span>Amount: <%= humanized_money_with_symbol(@order.amount) %></span>
+      <span>Amount: <%= humanized_money_with_symbol(@unsub.price_cents) %></span>
     </label>
   </article>
 
@@ -11,6 +12,6 @@
     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
     data-name="My Fleeme"
     data-description="Fleeme <%= @order %>"
-    data-amount="<%= @order.amount_cents %>"
+    data-amount="<%= @unsub.price_cents %>"
     data-currency="EUR"></script>
 <% end %>

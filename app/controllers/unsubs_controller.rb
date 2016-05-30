@@ -34,7 +34,7 @@ class UnsubsController < ApplicationController
 
     @unsub.service = @service
     if @unsub.save
-      redirect_to service_unsub_path(@service, @unsub)
+      redirect_to unsub_path(@unsub)
     else
       render 'service/show'
     end

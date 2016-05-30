@@ -1,20 +1,15 @@
 Rails.application.routes.draw do
 
-  get 'payments/new'
-
-  get 'orders/show'
-
   resources :services do
-    resources :unsubs, only: [ :new, :create, :show]
+    resources :unsubs, only: [ :new, :create]
   end
 
-  resources :orders, only: [:show, :create] do
+  resources :unsubs, only: [:show] do
     resources :payments, only: [:new, :create]
   end
 
   devise_for :users
   root to: 'pages#home'
-
 
 end
   # The priority is based upon order of creation: first created -> highest priority.
