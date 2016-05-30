@@ -7,15 +7,22 @@ class UnsubsController < ApplicationController
     initialize_hash
     @text_field = "text_field"
 
+<<<<<<< HEAD
     # html = render_to_string(layout: true, action: "new")
+=======
+    html = render_to_string(layout: true, action: "new")
+>>>>>>> master
 
     # kit = PDFKit.new(html, :page_size => 'Letter')
     # kit.stylesheets << Rails.root.to_s + "/public/" + view_context.asset_path("application.css")
     # kit.to_file("#{Rails.root}/tmp/test.pdf")
 
+<<<<<<< HEAD
     # # kit = PDFKit.new(html, :page_size => 'Letter')
     # # kit.stylesheets << Rails.root.to_s + "/public/assets/application-49e46c8435a0747ac9d8178ca011c4113a16f77937fd101831faaad71baa7427.css"
     # # kit.to_file("#{Rails.root}/tmp/test.pdf")
+=======
+>>>>>>> master
   end
 
   def create
@@ -36,7 +43,7 @@ class UnsubsController < ApplicationController
 
     @unsub.service = @service
     if @unsub.save
-      redirect_to service_path(@service)
+      redirect_to service_unsub_path(@service, @unsub)
     else
       render 'service/show'
     end
