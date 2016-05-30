@@ -60,9 +60,9 @@ class UnsubsController < ApplicationController
     html = render_to_string(layout: false, action: "show")
 
     kit = PDFKit.new(html, :page_size => 'Letter')
-    kit.stylesheets << Rails.root.to_s + "/public/" + view_context.asset_path("application.css")
+    kit.stylesheets << Rails.root.to_s + "/public" + view_context.asset_path("application.css")
 
-    send_data kit.to_pdf, :filename => "file.pdf",
+    send_data kit.to_pdf, :filename => "/tmp/file.pdf",
                           :type => "application/pdf"
     end
 
