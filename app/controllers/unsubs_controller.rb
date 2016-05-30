@@ -30,10 +30,11 @@ class UnsubsController < ApplicationController
     @service = Service.find(params[:service_id])
     @unsub = Unsub.new(unsub_params)
     @unsub.form_complete = params[:unsub][:form_complete]
+    @unsub.price = 7
 
     @unsub.service = @service
     if @unsub.save
-      redirect_to service_unsub_path(@service, @unsub)
+      redirect_to unsub_path(@unsub)
     else
       render 'service/show'
     end
