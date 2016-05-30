@@ -40,17 +40,33 @@ class UnsubsController < ApplicationController
     else
       render 'service/show'
     end
+
   end
 
   def show
     @unsub = Unsub.find(params[:id])
 
-    html = render_to_string(layout: true, action: "new")
+
+  end
+
+  def generate_pdf
+
+    @unsub = Unsub.find(params[:unsub_id])
+
+    html = render_to_string(layout: true, action: "show")
 
     kit = PDFKit.new(html, :page_size => 'Letter')
-    kit.stylesheets << Rails.root.to_s + "/public/assets/application-49e46c8435a0747ac9d8178ca011c4113a16f77937fd101831faaad71baa7427.css"
+    kit.stylesheets << Rails.root.to_s + "/public/" + view_context.asset_path("application.css")
     kit.to_file("#{Rails.root}/tmp/test.pdf")
   end
+
+  def send_email
+    @unsub = Unsub.find(params[:unsub_id])
+
+    @mail = Mail.new
+    @mail.add_file("/tmp/test.pdf")
+  end
+
 
   private
 
