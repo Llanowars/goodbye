@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
 
+  get 'payments/new'
+
   get 'orders/show'
 
   resources :services do
     resources :unsubs, only: [ :new, :create, :show]
   end
 
-  resources :orders, only: [:show, :create]
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: [:new, :create]
+  end
 
   devise_for :users
   root to: 'pages#home'
