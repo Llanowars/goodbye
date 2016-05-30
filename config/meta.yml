@@ -1,0 +1,5 @@
+# config/meta.yml
+meta_title: "Fleeme"
+meta_description: "Résiliez vos abonnements en quelques clics."
+meta_image: "logo-red.png" # Une image dans votre dossier app/assets/images/
+twitter_account: "@flemmefr" # indispensable pour les Twitter Cards
