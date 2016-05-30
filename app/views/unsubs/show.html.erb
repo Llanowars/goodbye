@@ -42,11 +42,70 @@
             </ul>
           </div>
           <div class="col-lg-4 col-sm-12">
-            <button class="btn-blue-neg">Partager sur Facebook</button>
+            <button class="btn-blue-neg" onclick="shareOnFB();">Partager sur Facebook</button>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Votre lettre personnalisée</h4>
+      </div>
+      <div class="modal-body">
+        <p><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>Merci pour votre partage.</p>
+        <p>Cliquez sur "Télécharger ma lettre" ci-dessous pour obtenir votre lettre de résiliation au format PDF.</p>
+        <p>Votre demande de résiliation doit être envoyée à l'adresse suivante:</p>
+        <div class="card-address-service">
+          <p><%= @unsub.service.company%></p>
+          <p><%= @unsub.service.name%></p>
+          <p><%= @unsub.service.street_address%></p>
+          <p><%= @unsub.service.zip_code%>, <%= @unsub.service.city%></p>
+        </div>
+      </div>
+      <div class="modal-footer text-center">
+        <button type="button" class="btn button-red"><i class="fa fa-file-text-o" aria-hidden="true"></i> Télécharger ma lettre</button>
+        <hr>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script>
+function shareOnFB() {
+ FB.ui({
+        method: "feed",
+        link: "www.fleeme.fr",
+        picture: "http://2d28c608.ngrok.io/assets/fbpicture.jpg",
+        name:"<%= meta_title %>",
+        caption: 'www.fleeme.fr',
+        description: "<%= meta_description %>"
+      }, function(t){
+        var str = JSON.stringify(t);
+        var obj = JSON.parse(str);
+        if(obj.post_id != '')
+        {
+           console.log("Successfull sharing !");
+           $('#myModal').modal('show');
+        }
+      });
+}
 
+</script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=230165427375572=&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
