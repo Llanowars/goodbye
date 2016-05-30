@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
   resources :services do
-    resources :unsubs, only: [ :new, :create, :show]
+    resources :unsubs, only: [ :new, :create, :show] do
+      get "/generate_pdf" => "unsubs#generate_pdf"
+      get "/send_email"  => "unsubs#send_email"
+    end
   end
 
   devise_for :users

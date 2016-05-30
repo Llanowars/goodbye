@@ -35,4 +35,6 @@
 </div>
 
 
+<%= link_to service_unsub_generate_pdf_path(@unsub.service, @unsub), :class => "btn btn-large btn-danger" do %> Download Now <% end %>
 
+<%= link_to service_unsub_send_email_path(@unsub.service, @unsub), :class => "btn btn-large btn-success" do %> Send by Email <% end %>
