@@ -37,13 +37,12 @@ class UnsubsController < ApplicationController
 
     @unsub.service = @service
 
-    purpose = @unsub.form_complete["purpose"]
-    reason  = @unsub.form_complete["reason"]
+    @unsub.purpose = @unsub.form_complete["purpose"]
+    @unsub.reason  = @unsub.form_complete["reason"]
     chosen_purpose = fields.select { |f| f[:value] == purpose }.first
     chosen_reason = chosen_purpose[:choices].select { |choice| choice[:value] == reason }.first
-    chosen_reason[:content]
+    @unsub.content = chosen_reason[:content]
 
-    raise
     if @unsub.save
       redirect_to unsub_path(@unsub)
     else
