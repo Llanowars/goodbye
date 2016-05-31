@@ -68,15 +68,21 @@
           "type": "string"
         },
         {
+        "name": "purpose",
+        "value": "Je ne sais pas",
+        "type": "string"
+        },
+        {
           "name": "purpose",
-          "label": "Justification 1",
+          "label": "Motifs valables dans votre situation",
           "value" : "Moins d'1 an",
           "type": "radio",
           "choices" : [
             {
               "name" : "reason",
               "value" : "Déménagement hors zone",
-              "type" : "string"
+              "type" : "string",
+              "content" : "Je vous informe aujourd'hui par cette lettre envoyée en recommandé, que je souhaite mettre fin à mon abonnement souscrit auprès de votre établissement, sous le numéro d'abonné [[num_abonne]], suite à mon déménagement. Les conditions générales de vente de mon contrat me permettent de résilier mon abonnement, suite à mon déménagement dans une zone où votre réseau de salles de cinéma n est pas présent. J'invoque donc mon droit à résilier sans frais. Vous trouverez ci-joint à ce courrier, un document justifiant la localisation de mon nouveau domicile. Je vous remercie de prendre en compte ma demande dès réception de ce courrier recommandé, et de me rembourser les sommes trop perçues correspondant aux mois pendant lesquels je ne pourrais pas profiter de mon abonnement."
             },
             {
               "name" : "reason",
@@ -90,71 +96,6 @@
             },
             {
               "name" : "reason",
-              "value" : "Mon état de santé ne me permet plus de profiter de vos services",
-              "type" : "string"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "test_nested justification 1",
-      "label": "Date de votre insciption à UGC 2",
-      "type": "radio",
-      "required": true,
-      "choices": [
-        {
-          "name": "nested",
-          "value": "Plus d'1 an",
-          "type": "string"
-        },
-        {
-          "name": "nested",
-          "label": "Justification 2",
-          "value": "Moins de 14 jours",
-          "type": "radio",
-          "choices" : [
-            {
-              "name" : "nested3",
-              "value" : "Déménagement hors zone",
-              "type" : "string"
-            },
-            {
-              "name" : "nested3",
-              "value" : "UGC a modifié ses tarifs",
-              "type" : "string"
-            },
-            {
-              "name" : "nested3",
-              "value" : "Le Cinéma près de chez moi n' est plus affilié à votre réseau ou a fermé",
-              "type" : "string"
-            }
-
-          ]
-        },
-        {
-          "name": "nested",
-          "label": "Justification",
-          "value" : "Moins d'1 an test",
-          "type": "radio",
-          "choices" : [
-            {
-              "name" : "nested2",
-              "value" : "Déménagement hors zone",
-              "type" : "string"
-            },
-            {
-              "name" : "nested2",
-              "value" : "UGC a modifié ses tarifs",
-              "type" : "string"
-            },
-            {
-              "name" : "nested2",
-              "value" : "Le Cinéma près de chez moi n' est plus affilié à votre réseau ou a fermé",
-              "type" : "string"
-            },
-            {
-              "name" : "nested2",
               "value" : "Mon état de santé ne me permet plus de profiter de vos services",
               "type" : "string"
             }

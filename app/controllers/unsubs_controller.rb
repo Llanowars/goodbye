@@ -16,6 +16,9 @@ class UnsubsController < ApplicationController
   end
 
   def create
+    initialize_hash
+    @fields = generate_fields(@hash_service)[9][:choices]
+
     @user = User.new
     @user.firstname = params[:unsub][:form_complete][:firstname]
     @user.lastname = params[:unsub][:form_complete][:lastname]
@@ -33,6 +36,14 @@ class UnsubsController < ApplicationController
     @unsub.price = 7
 
     @unsub.service = @service
+
+    purpose = @unsub.form_complete["purpose"]
+    reason  = @unsub.form_complete["reason"]
+    chosen_purpose = fields.select { |f| f[:value] == purpose }.first
+    chosen_reason = chosen_purpose[:choices].select { |choice| choice[:value] == reason }.first
+    chosen_reason[:content]
+
+    raise
     if @unsub.save
       redirect_to unsub_path(@unsub)
     else
