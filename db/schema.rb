@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20160531101947) do
     t.string   "sku"
     t.string   "purpose"
     t.string   "reason"
+    t.string   "content"
   end
 
   add_index "unsubs", ["service_id"], name: "index_unsubs_on_service_id", using: :btree
