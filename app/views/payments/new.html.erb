@@ -29,10 +29,10 @@
   <hr>
 
   <div class="service">
-    <p><%= @unsub.service.company %></p>
-    <p><%= @unsub.service.name %></p>
-    <p><%= @unsub.service.postal_box %></p>
-    <p><%= @unsub.service.zip_code %> <%= @unsub.service.city %></p>
+    <p class="text-right"><%= @unsub.service.company %></p>
+    <p class="text-right"><%= @unsub.service.name %></p>
+    <p class="text-right"><%= @unsub.service.postal_box %></p>
+    <p class="text-right"><%= @unsub.service.zip_code %> <%= @unsub.service.city %></p>
   </div>
 
   <div class="date">
@@ -57,6 +57,9 @@
   <div class="signature">
     <p><%= @unsub.form_complete["firstname"] %> <%= @unsub.form_complete["lastname"] %></p>
   </div>
+
+  <%= link_to unsub_generate_pdf_path(@unsub.service, @unsub), :class => "button-red" do %> <i class="fa fa-file-text-o" aria-hidden="true"></i> Télécharger ma lettre <% end %>
+
 </div>
 
 

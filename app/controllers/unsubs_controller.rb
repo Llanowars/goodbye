@@ -57,15 +57,16 @@ class UnsubsController < ApplicationController
   def generate_pdf
 
     @unsub = Unsub.find(params[:unsub_id])
-
     html = render_to_string(layout: false, action: "show")
 
     kit = PDFKit.new(html, :page_size => 'Letter')
-    kit.stylesheets << Rails.root.to_s + "/public" + view_context.asset_path("application.css")
+    # kit.stylesheets << Rails.root.to_s + "/public" + view_context.asset_path("application.css")
 
-    send_data kit.to_pdf, :filename => "/tmp/file.pdf",
-                          :type => "application/pdf"
+    send_data(kit.to_pdf, :filename => "#{@unsub.form_complete['firstname']}_#{@unsub.form_complete['lastname']}_#{@unsub.service.name.gsub(" ", "_")}.pdf",
+                          :type => "application/pdf")
   end
+
+  # _@unsub.service["service_id"]
 
   def send_email
     @unsub = Unsub.find(params[:unsub_id])
