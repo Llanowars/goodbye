@@ -1,41 +1,31 @@
-<div class="text-center"><%= form_tag do %>
-  <h1>Récapitulatif de votre commande</h1>
-    <article>
-      <label class="amount">
-        <span>Prix: <%= @unsub.price_cents.to_f/100 %>€</span>
-      </label>
-    </article>
-
-
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-      data-name="My Fleeme"
-      data-description="Fleeme <%= @order %>"
-      data-amount="<%= @unsub.price_cents %>"
-      data-currency="EUR"></script>
-  <% end %>
-</div>
-
-<hr>
-
 <div class="container min-height-screen">
-  <div class="user">
-    <p><%= @unsub.form_complete["firstname"] %> <%= @unsub.form_complete["lastname"] %></p>
-    <p><%= @unsub.form_complete["address"] %></p>
-    <p><%= @unsub.form_complete["address_complement"] %></p>
-    <p><%= @unsub.form_complete["zipcode"] %> <%= @unsub.form_complete["city"] %></p>
+
+  <div class="text-center">
+    <h1>Aperçu de votre courrier Fleeme</h1>
   </div>
 
   <hr>
 
-  <div class="service">
-    <p class="text-right"><%= @unsub.service.company %></p>
-    <p class="text-right"><%= @unsub.service.name %></p>
-    <p class="text-right"><%= @unsub.service.postal_box %></p>
-    <p class="text-right"><%= @unsub.service.zip_code %> <%= @unsub.service.city %></p>
+  <div class="container" style="position: relative;">
+    <div class="user">
+      <p><%= @unsub.form_complete["firstname"] %> <%= @unsub.form_complete["lastname"] %></p>
+      <p><%= @unsub.form_complete["address"] %></p>
+      <p><%= @unsub.form_complete["address_complement"] %></p>
+      <p><%= @unsub.form_complete["zipcode"] %> <%= @unsub.form_complete["city"] %></p>
+    </div>
+
+    <div class="service text-right" style="position: absolute; top: 0px; right: 50px;">
+      <p><%= @unsub.service.company %></p>
+      <p><%= @unsub.service.name %></p>
+      <p><%= @unsub.service.postal_box %></p>
+      <p><%= @unsub.service.zip_code %> <%= @unsub.service.city %></p>
+    </div>
   </div>
 
-  <div class="date">
+  <hr>
+
+
+  <div class="date text-right" style="margin-right: 150px;">
     <p><%= @unsub.form_complete["city"] %>, le <%= Date.today.strftime("%d-%m-%Y") %></p>
   </div>
 
@@ -47,19 +37,43 @@
 
   <div class="body">
     <p>Madame, Monsieur</p>
-    <%= @unsub.content %>
-    <p></p>
+
+    <p><%= @unsub.content %></p>
+
+    <p>Je vous prie de supprimer de vos fichiers toute information relative à mes coordonnées postales et bancaires. Je m'oppose en particulier à toute utilisation, ou mise à disposition à des organismes extérieurs, de mes coordonnées personnelles à des fins commerciales.</p>
 
     <p>Veuillez accepter Madame, Monsieur l' expression de mes salutations distinguées.</p>
-
   </div>
 
   <div class="signature">
     <p><%= @unsub.form_complete["firstname"] %> <%= @unsub.form_complete["lastname"] %></p>
   </div>
+</div>
 
-  <%= link_to unsub_generate_pdf_path(@unsub.service, @unsub), :class => "button-red" do %> <i class="fa fa-file-text-o" aria-hidden="true"></i> Télécharger ma lettre <% end %>
+<hr>
 
+<div class="container">
+  <div class="text-left">
+    <%= link_to unsub_generate_pdf_path(@unsub.service, @unsub), :class => "button-red" do %> <i class="fa fa-file-text-o" aria-hidden="true"></i> Télécharger ma lettre <% end %>
+  </div>
+
+  <div class="text-right"><%= form_tag do %>
+
+      <article>
+        <label class="amount">
+          <span>Prix: <%= @unsub.price_cents.to_f/100 %>€</span>
+        </label>
+      </article>
+
+
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+        data-name="My Fleeme"
+        data-description="Fleeme <%= @order %>"
+        data-amount="<%= @unsub.price_cents %>"
+        data-currency="EUR"></script>
+    <% end %>
+  </div>
 </div>
 
 

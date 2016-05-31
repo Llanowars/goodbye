@@ -27,7 +27,11 @@ class PaymentsController < ApplicationController
 
     rescue Stripe::CardError => e
       flash[:error] = e.message
-      redirect_to unsub_payments_path(@unsub)
+      redirect_to unsub_payment_path(@unsub)
+  end
+
+  def show
+
   end
 
 end
