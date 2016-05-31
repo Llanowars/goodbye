@@ -11,7 +11,6 @@ gem 'pg'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'redis'
-gem 'money-rails'
 gem 'stripe'
 
 

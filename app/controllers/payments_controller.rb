@@ -29,9 +29,4 @@ class PaymentsController < ApplicationController
       flash[:error] = e.message
       redirect_to unsub_payment_path(@unsub)
   end
-
-  def show
-
-  end
-
 end
