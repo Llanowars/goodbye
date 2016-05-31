@@ -7,7 +7,7 @@
         <fieldset class="custom-form initial-pos">
           <% if  d[:type] == "radio"%>
             <%= label_tag(d[:label], d[:label]) %>
-            <%= hidden_field_tag("unsub[form_complete[#{d[:name]}]]", nil, id: "hidden_field") %>
+            <%= hidden_field_tag("unsub[form_complete[#{d[:name]}]]", nil, id: "hidden_field") %
             <% d[:choices].each do |c| %>
               <div class="radio_clickable_div">
                 <%= c[:value] %>

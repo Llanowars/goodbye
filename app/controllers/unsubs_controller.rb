@@ -65,7 +65,7 @@ class UnsubsController < ApplicationController
 
     send_data kit.to_pdf, :filename => "/tmp/file.pdf",
                           :type => "application/pdf"
-    end
+  end
 
   def send_email
     @unsub = Unsub.find(params[:unsub_id])

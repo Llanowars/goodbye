@@ -75,7 +75,7 @@
         </div>
       </div>
       <div class="modal-footer text-center">
-        <%= link_to service_unsub_generate_pdf_path(@unsub.service, @unsub), :class => "button-red" do %> <i class="fa fa-file-text-o" aria-hidden="true"></i> Télécharger ma lettre <% end %>
+        <%= link_to unsub_generate_pdf_path(@unsub.service, @unsub), :class => "button-red" do %> <i class="fa fa-file-text-o" aria-hidden="true"></i> Télécharger ma lettre <% end %>
         <hr>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
 
