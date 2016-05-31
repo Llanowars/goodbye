@@ -54,7 +54,6 @@ class UnsubsController < ApplicationController
 
   end
 
-<<<<<<< HEAD
   def generate_pdf
 
     @unsub = Unsub.find(params[:unsub_id])
@@ -72,18 +71,15 @@ class UnsubsController < ApplicationController
     @unsub = Unsub.find(params[:unsub_id])
 
     @mail = Mail.new
-    @mail.add_file("/tmp/test.pdf")
+    @mail.add_file("/tmp/file.pdf")
   end
 
-
-=======
   def generate_fields(hash)
     hash.each do |field|
       @fieldname = field[:name]
     end
   end
 
->>>>>>> master
   private
 
   def initialize_hash
