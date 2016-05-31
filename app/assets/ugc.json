@@ -48,9 +48,119 @@
     },
     {
       "name": "numero_abonne",
-      "label": "Numéro de votre carte UGC illimité",
+      "label": "Numéro de votre carte UGC illimité ",
       "type": "string"
-    }
+    },
+    {
+      "name": "engagement",
+      "label": "Date de votre insciption à UGC 1",
+      "type": "radio",
+      "required": true,
+      "choices": [
+        {
+          "name": "purpose",
+          "value": "Plus d'1 an",
+          "type": "string"
+        },
+        {
+          "name": "purpose",
+          "value": "Moins de 14 jours",
+          "type": "string"
+        },
+        {
+          "name": "purpose",
+          "label": "Justification 1",
+          "value" : "Moins d'1 an",
+          "type": "radio",
+          "choices" : [
+            {
+              "name" : "reason",
+              "value" : "Déménagement hors zone",
+              "type" : "string"
+            },
+            {
+              "name" : "reason",
+              "value" : "UGC a modifié ses tarifs",
+              "type" : "string"
+            },
+            {
+              "name" : "reason",
+              "value" : "Le Cinéma près de chez moi n' est plus affilié à votre réseau ou a fermé",
+              "type" : "string"
+            },
+            {
+              "name" : "reason",
+              "value" : "Mon état de santé ne me permet plus de profiter de vos services",
+              "type" : "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "test_nested justification 1",
+      "label": "Date de votre insciption à UGC 2",
+      "type": "radio",
+      "required": true,
+      "choices": [
+        {
+          "name": "nested",
+          "value": "Plus d'1 an",
+          "type": "string"
+        },
+        {
+          "name": "nested",
+          "label": "Justification 2",
+          "value": "Moins de 14 jours",
+          "type": "radio",
+          "choices" : [
+            {
+              "name" : "nested3",
+              "value" : "Déménagement hors zone",
+              "type" : "string"
+            },
+            {
+              "name" : "nested3",
+              "value" : "UGC a modifié ses tarifs",
+              "type" : "string"
+            },
+            {
+              "name" : "nested3",
+              "value" : "Le Cinéma près de chez moi n' est plus affilié à votre réseau ou a fermé",
+              "type" : "string"
+            }
 
+          ]
+        },
+        {
+          "name": "nested",
+          "label": "Justification",
+          "value" : "Moins d'1 an test",
+          "type": "radio",
+          "choices" : [
+            {
+              "name" : "nested2",
+              "value" : "Déménagement hors zone",
+              "type" : "string"
+            },
+            {
+              "name" : "nested2",
+              "value" : "UGC a modifié ses tarifs",
+              "type" : "string"
+            },
+            {
+              "name" : "nested2",
+              "value" : "Le Cinéma près de chez moi n' est plus affilié à votre réseau ou a fermé",
+              "type" : "string"
+            },
+            {
+              "name" : "nested2",
+              "value" : "Mon état de santé ne me permet plus de profiter de vos services",
+              "type" : "string"
+            }
+          ]
+        }
+      ]
+    }
   ]
 }

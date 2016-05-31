@@ -1,55 +1,101 @@
 {
   "fields": [
-
     {
-      "name" : "firstname",
-      "label" : "Nom",
-      "type" : "text",
-      "required" : true
+      "name": "firstname",
+      "label": "Prénom",
+      "type": "string",
+      "required": true
     },
     {
-      "name" : "lastname",
-      "label" : "Prénom",
-      "type" : "text",
-      "required" : true
-    },
-     {
-      "name" : "email",
-      "label" : "Email",
-      "type" : "text",
-      "required" : true
+      "name": "lastname",
+      "label": "Nom",
+      "type": "string",
+      "required": true
     },
     {
-      "name" : "address",
-      "label" : "Adresse",
-      "type" : "text",
-      "required" : true
+      "name": "email",
+      "label": "Email",
+      "type": "string",
+      "required": true
     },
     {
-      "name" : "address_complement",
-      "label" : "Complément d' adresse",
-      "type" : "text"
+      "name": "address",
+      "label": "Adresse",
+      "type": "string",
+      "required": true
     },
     {
-      "name" : "zipcode",
-      "label" : "Code postal",
-      "type" : "text",
-      "required" : true
+      "name": "address_complement",
+      "label": "Complément d' adresse",
+      "type": "string"
     },
     {
-      "name" : "city",
-      "label" : "Ville",
-      "type" : "text",
-      "required" : true
+      "name": "zipcode",
+      "label": "Code postal",
+      "type": "string",
+      "required": true
     },
     {
-      "name" : "phone",
-      "label" : "Numéro de téléphone",
-      "type" : "text"
+      "name": "city",
+      "label": "Ville",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "phone",
+      "label": "Numéro de téléphone",
+      "type": "string"
+    },
+    {
+      "name": "numero_abonne",
+      "label": "Numéro de votre carte UGC illimité",
+      "type": "string"
+    },
+    {
+      "name": "engagement",
+      "label": "Date de votre insciption à UGC",
+      "type": "radio",
+      "required": true,
+      "choices": [
+        {
+          "name": "purpose",
+          "value": "Plus d'1 an",
+          "type": "string"
+        },
+        {
+          "name": "purpose",
+          "value": "Moins de 14 jours",
+          "type": "string"
+        },
+        {
+          "name": "purpose",
+          "label": "Justification",
+          "value" : "Moins d'1 an",
+          "type": "radio",
+          "choices" : [
+            {
+              "name" : "reason",
+              "label" : "Déménagement hors zone",
+              "type" : "string"
+            },
+            {
+              "name" : "reason",
+              "label" : "UGC a modifié ses tarifs",
+              "type" : "string"
+            },
+            {
+              "name" : "reason",
+              "label" : "Le Cinéma près de chez moi n' est plus affilié à votre réseau ou a fermé",
+              "type" : "string"
+            },
+            {
+              "name" : "reason",
+              "label" : "Mon état de santé ne me permet plus de profiter de vos services",
+              "type" : "string"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
-
-
-
-
