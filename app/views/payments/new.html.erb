@@ -1,0 +1,65 @@
+<div class="text-center"><%= form_tag do %>
+  <h1>Récapitulatif de votre commande</h1>
+    <article>
+      <label class="amount">
+        <span>Prix: <%= humanized_money_with_symbol(@unsub.price_cents) %></span>
+      </label>
+    </article>
+
+
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+      data-name="My Fleeme"
+      data-description="Fleeme <%= @order %>"
+      data-amount="<%= @unsub.price_cents %>"
+      data-currency="EUR"></script>
+  <% end %>
+</div>
+
+<hr>
+
+<div class="container min-height-screen">
+  <div class="user">
+    <p><%= @unsub.form_complete["firstname"] %> <%= @unsub.form_complete["lastname"] %></p>
+    <p><%= @unsub.form_complete["address"] %></p>
+    <p><%= @unsub.form_complete["address_complement"] %></p>
+    <p><%= @unsub.form_complete["zipcode"] %> <%= @unsub.form_complete["city"] %></p>
+  </div>
+
+  <hr>
+
+  <div class="service">
+    <p class="text-right"><%= @unsub.service.company %></p>
+    <p class="text-right"><%= @unsub.service.name %></p>
+    <p class="text-right"><%= @unsub.service.postal_box %></p>
+    <p class="text-right"><%= @unsub.service.zip_code %> <%= @unsub.service.city %></p>
+  </div>
+
+  <div class="date">
+    <p><%= @unsub.form_complete["city"] %>, le <%= Date.today.strftime("%d-%m-%Y") %></p>
+  </div>
+
+  <hr>
+
+  <div class="object">
+   <p> Objet: Résiliation de la carte cinéma, référence client N° <%= @unsub.form_complete["numero_abonne"] %> </p>
+  </div>
+
+  <div class="body">
+    <p>Madame, Monsieur</p>
+    <%= @unsub.content %>
+    <p></p>
+
+    <p>Veuillez accepter Madame, Monsieur l' expression de mes salutations distinguées.</p>
+
+  </div>
+
+  <div class="signature">
+    <p><%= @unsub.form_complete["firstname"] %> <%= @unsub.form_complete["lastname"] %></p>
+  </div>
+
+  <%= link_to unsub_generate_pdf_path(@unsub.service, @unsub), :class => "button-red" do %> <i class="fa fa-file-text-o" aria-hidden="true"></i> Télécharger ma lettre <% end %>
+
+</div>
+
+

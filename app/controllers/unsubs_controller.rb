@@ -7,15 +7,24 @@ class UnsubsController < ApplicationController
     initialize_hash
     @fields = generate_fields(@hash_service)
 
-    html = render_to_string(layout: true, action: "new")
+
+    # html = render_to_string(layout: true, action: "new")
 
     # kit = PDFKit.new(html, :page_size => 'Letter')
     # kit.stylesheets << Rails.root.to_s + "/public/" + view_context.asset_path("application.css")
     # kit.to_file("#{Rails.root}/tmp/test.pdf")
 
+
+     # kit = PDFKit.new(html, :page_size => 'Letter')
+    # kit.stylesheets << Rails.root.to_s + "/public/assets/application-49e46c8435a0747ac9d8178ca011c4113a16f77937fd101831faaad71baa7427.css"
+     # kit.to_file("#{Rails.root}/tmp/test.pdf")
+
   end
 
   def create
+    initialize_hash
+    @fields = generate_fields(@hash_service)[9][:choices]
+
     @user = User.new
     @user.firstname = params[:unsub][:form_complete][:firstname]
     @user.lastname = params[:unsub][:form_complete][:lastname]
@@ -30,17 +39,50 @@ class UnsubsController < ApplicationController
     @service = Service.find(params[:service_id])
     @unsub = Unsub.new(unsub_params)
     @unsub.form_complete = params[:unsub][:form_complete]
+    @unsub.price = 7
 
     @unsub.service = @service
+
+    @unsub.purpose = @unsub.form_complete["purpose"]
+    @unsub.reason  = @unsub.form_complete["reason"]
+    chosen_purpose = @fields.select { |f| f[:value] == @unsub.purpose }.first
+    chosen_reason = chosen_purpose[:choices].select { |choice| choice[:value] == @unsub.reason }.first
+    @unsub.content = chosen_reason[:content]
+
     if @unsub.save
-      redirect_to service_unsub_path(@service, @unsub)
+      redirect_to unsub_path(@unsub)
     else
       render 'service/show'
     end
+
   end
 
   def show
+
     @unsub = Unsub.find(params[:id])
+
+
+  end
+
+  def generate_pdf
+
+    @unsub = Unsub.find(params[:unsub_id])
+    html = render_to_string(layout: false, action: "show")
+
+    kit = PDFKit.new(html, :page_size => 'Letter')
+    # kit.stylesheets << Rails.root.to_s + "/public" + view_context.asset_path("application.css")
+
+    send_data(kit.to_pdf, :filename => "#{@unsub.form_complete['firstname']}_#{@unsub.form_complete['lastname']}_#{@unsub.service.name.gsub(" ", "_")}.pdf",
+                          :type => "application/pdf")
+  end
+
+  # _@unsub.service["service_id"]
+
+  def send_email
+    @unsub = Unsub.find(params[:unsub_id])
+
+    @mail = Mail.new
+    @mail.add_file("/tmp/file.pdf")
   end
 
   def generate_fields(hash)
