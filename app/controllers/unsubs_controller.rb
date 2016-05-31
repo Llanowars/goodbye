@@ -39,8 +39,8 @@ class UnsubsController < ApplicationController
 
     @unsub.purpose = @unsub.form_complete["purpose"]
     @unsub.reason  = @unsub.form_complete["reason"]
-    chosen_purpose = fields.select { |f| f[:value] == purpose }.first
-    chosen_reason = chosen_purpose[:choices].select { |choice| choice[:value] == reason }.first
+    chosen_purpose = @fields.select { |f| f[:value] == @unsub.purpose }.first
+    chosen_reason = chosen_purpose[:choices].select { |choice| choice[:value] == @unsub.reason }.first
     @unsub.content = chosen_reason[:content]
 
     if @unsub.save
