@@ -74,12 +74,6 @@
           <p><%= @unsub.service.zip_code%>, <%= @unsub.service.city%></p>
         </div>
       </div>
-      <div class="modal-footer text-center">
-        <%=  link_to unsub_generate_pdf_path(@unsub.service, @unsub), :class => "button-red" do %>
-        <i class="fa fa-file-text-o" aria-hidden="true"></i> Télécharger ma lettre <% end %>
-        <hr>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-      </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
