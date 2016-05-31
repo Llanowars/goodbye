@@ -2,7 +2,7 @@
   <h1>Récapitulatif de votre commande</h1>
     <article>
       <label class="amount">
-        <span>Prix: <%= humanized_money_with_symbol(@unsub.price_cents) %></span>
+        <span>Prix: <%= @unsub.price_cents.to_f/100 %>€</span>
       </label>
     </article>
 
