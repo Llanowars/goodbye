@@ -2,17 +2,18 @@
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-sm-12">
       <div class="card-confirmation-title text-center padded-1">
-        <h4>Vos options pour votre résiliation</h4>
+        <h4>Votre lettre personnalisée a bien été générée avec les informations suivantes:</h4>
+        <p>Pour terminer votre résiliation, choisissez une des options suivantes:</p>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2  col-sm-12">
+    <p>Option 1</p>
       <div class="card-confirmation">
         <div class="row">
           <div class="col-lg-8 col-sm-12">
             <h3>Envoi Fleeme automatique</h3>
-            <h4><%= @unsub.price %> €</h4>
             <ul class="list-unstyled">
               <li>- Génération de votre lettre recommandée de résiliation personnalisée</li>
               <li>- Envoi immédiat de votre lettre à <%= @unsub.service.company%></li>
@@ -20,6 +21,9 @@
               <li>- Réception de l'accusé de réception sur votre boîte mail</li>
             </ul>
           </div>
+          <div class="col-lg-4 col-sm-12">
+            h4><%= @unsub.price %> €</h4>
+            <button class="button-red vcenter">Choisir</button>
             <div class="col-lg-4 col-sm-12">
               <%= form_tag new_unsub_payment_path(@unsub), method: :get do %>
               <%= hidden_field_tag 'unsub_id', @unsub.id %>
@@ -33,18 +37,20 @@
   </div>
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-sm-12">
+    <p>Option 2</p>
       <div class="card-confirmation">
         <div class="row">
           <div class="col-lg-8 col-sm-12">
-            <h3>Lettre personnalisée sans envoi</h3>
-            <h4>Gratuit</h4>
+            <h3>Lettre personnalisée sans envoi à télécharger</h3>
             <ul class="list-unstyled">
               <li>- Génération de votre lettre de résiliation personnalisée</li>
               <li>- Réception de votre lettre sur votre boîte mail au format PDF</li>
             </ul>
           </div>
           <div class="col-lg-4 col-sm-12">
-            <button class="button-red vcenter" onclick="shareOnFB();">Partager sur Facebook</button>
+            <h4>Gratuit</h4>
+            <p>Vous devez partager Fleeme sur Facebook pour accéder à votre lettre</p>
+            <button class="btn-blue-neg" onclick="shareOnFB();">Choisir</button>
           </div>
         </div>
       </div>

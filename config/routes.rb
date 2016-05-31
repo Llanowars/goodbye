@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :unsubs, only: [:show] do
-    resources :payments, only: [:new, :create]
+    resources :payments, only: [:new, :create, :show]
   end
 
   devise_for :users

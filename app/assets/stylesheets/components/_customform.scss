@@ -1,0 +1,60 @@
+fieldset.custom-form {
+  transition: all .5s cubic-bezier(.4, .25, .8, .3);
+  width: 100%
+}
+
+fieldset > input {
+  width:100%
+}
+
+fieldset.upload-file {
+  transition: all .5s cubic-bezier(.4, .25, .8, .3);
+}
+
+fieldset.validate-unsub {
+  transition: all .5s cubic-bezier(.4, .25, .8, .3);
+}
+
+.next-button {
+  width: 25%;
+  position: relative;
+  top: 20px;
+}
+
+.initial-pos {
+  position: absolute;
+  top: 80vh;
+  opacity: 0;
+}
+.min-height-screen {
+  min-height: calc(100vh - 30px);
+}
+
+.mid-pos {
+  transform: translate(0vh, -65vh);
+  transform-origin: 0 0;
+  opacity: 1;
+}
+
+.top-pos {
+  transform: translate(0vh, -100vh);
+  transform-origin: 0 0;
+  opacity: 0;
+}
+
+fieldset.custom-form input.input-text {
+  background-color: transparent;
+  border: 0;
+  border-bottom: solid 1px #636363;;
+  font-size: 2em;
+}
+
+fieldset.custom-form input.input-text:focus {
+  outline:none;
+}
+
+fieldset.custom-form label {
+  font-weight: normal;
+  font-size: 0.9em;
+  color: #30B1B7;
+}
