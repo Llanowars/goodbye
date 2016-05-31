@@ -35,6 +35,7 @@ gem "geocoder"
 gem 'carrierwave'
 gem 'pdfkit'
 gem 'wkhtmltopdf-binary'
+gem 'mail'
 
 group :development, :test do
   gem 'binding_of_caller'
