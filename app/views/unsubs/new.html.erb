@@ -1,8 +1,9 @@
 <div class="container ">
   <div class="row">
-    <div class="col-lg-7 min-height-screen">
-      <%= form_tag(service_unsubs_path)  do %>
+    <div class="col-lg-12 min-height-screen">
       <h2 class="tx-blue">Fleeme a quelques questions à vous poser</h2>
+      <p id="preview-infos">Vos informations:</p>
+      <%= form_tag(service_unsubs_path)  do %>
       <% @hash_service.each do |d| %>
         <fieldset class="custom-form initial-pos">
           <% if  d[:type] == "radio"%>
@@ -13,7 +14,7 @@
                 <%= label_tag("unsub[form_complete[#{c[:name]}]][#{c[:value]}]]", c[:value]) %>
               </div>
               <% if c[:type] == "radio" && c[:choices] %>
-                <fieldset class="sublevel hidden" >
+                <fieldset class="sublevel hidden initial-pos" >
                   <%= label_tag(c[:label], c[:label]) %>
                   <% c[:choices].each do |b| %>
                   <div class="radio-field">
@@ -22,21 +23,28 @@
                     <%= hidden_field_tag("unsub[form_complete[reason_description]]", b[:content]) %>
                   </div>
                   <% end %>
+                  <div class="btn-blue-neg next-button" >Suivant<div>
                 </fieldset>
               <% end %>
             <% end %>
           <%else %>
           <%= label_tag(d[:label], d[:label]) %>
-          <%= content_tag(:input, nil, type: d[:type], name: "unsub[form_complete[#{d[:name]}]]", class: "input-custom ") %>
+          <%= content_tag(:input, nil, type: d[:type], name: "unsub[form_complete[#{d[:name]}]]", class: "input-text ") %>
           <% end %>
-          <div class="btn-blue-neg" id="next-button">Suivant<div>
+          <div class="btn-blue-neg next-button" >Suivant<div>
         </fieldset>
         <% end %>
-        <div class="initial-pos upload-file">
-          <%= form_tag "/profiles/update", :multipart => true  %>
-          <%= file_field_tag :photo  %>
-        </div>
-        <%= submit_tag "validate", class: "initial-pos validate-form" %>
+        <fieldset class="initial-pos upload-file">
+          <div>
+            <%= form_tag "/profiles/update", :multipart => true  %>
+            <%= file_field_tag :photo  %>
+          </div>
+          <div class="btn-blue-neg next-button" >Suivant<div>
+        </fieldset>
+        <fieldset class="initial-pos validate-unsub">
+          <p>Vos informations sont bien enregistrées.</p>
+          <%= submit_tag "Générer mon courrier", class: "validate-form btn-blue-neg" %>
+        </fieldset>
     <% end %>
     </div>
   </div>
