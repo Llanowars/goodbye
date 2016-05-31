@@ -5,7 +5,7 @@ class UnsubsController < ApplicationController
     @unsub = Unsub.new
     @user = User.new
     initialize_hash
-    @text_field = "text_field"
+    @fields = generate_fields(@hash_service)
 
 
     # html = render_to_string(layout: true, action: "new")
@@ -54,6 +54,7 @@ class UnsubsController < ApplicationController
 
   end
 
+<<<<<<< HEAD
   def generate_pdf
 
     @unsub = Unsub.find(params[:unsub_id])
@@ -75,6 +76,14 @@ class UnsubsController < ApplicationController
   end
 
 
+=======
+  def generate_fields(hash)
+    hash.each do |field|
+      @fieldname = field[:name]
+    end
+  end
+
+>>>>>>> master
   private
 
   def initialize_hash
@@ -82,15 +91,7 @@ class UnsubsController < ApplicationController
     @hash_service = JSON.parse(file, symbolize_names: :true)[:fields]
   end
 
-  def field_type
-    if @form_service[:type] == "text"
-      @field_type = "text"
-    end
-  end
 
-  def field_name
-    @field_name = "name"
-  end
 
   def unsub_params
     params.require(:unsub).permit(:form_complete, :photo)

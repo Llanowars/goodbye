@@ -7,17 +7,18 @@
         <fieldset class="custom-form initial-pos">
           <% if  d[:type] == "radio"%>
             <%= label_tag(d[:label], d[:label]) %>
-            <%= hidden_field_tag("unsub[form_complete[#{d[:name]}]]", nil, id: "hidden_field") %
-            <% d[:choices].each do |c| %>
-              <div class="radio_clickable_div">
-                <%= c[:value] %>
+              <% d[:choices].each do |c| %>
+              <div class="radio-field <%=  c[:type] == "radio" && c[:choices] ? "has_sublevel" : "no_sublevel" %>">
+                <%= radio_button_tag("unsub[form_complete[#{c[:name]}]]", c[:value], id: "unsub[form_complete_[#{c[:value]}]]")  %>
+                <%= label_tag("unsub[form_complete[#{c[:name]}]][#{c[:value]}]]", c[:value]) %>
               </div>
               <% if c[:type] == "radio" && c[:choices] %>
-                <fieldset class="sublevel ">
+                <fieldset class="sublevel hidden" >
                   <%= label_tag(c[:label], c[:label]) %>
                   <% c[:choices].each do |b| %>
                   <div class="radio-field">
-                    <%= content_tag(:input, b[:label], type: c[:type], name: "unsub[form_complete[#{c[:name]}]]", class: "input-custom-radio") %>
+                    <%= radio_button_tag("unsub[form_complete[#{b[:name]}]]", b[:value], id: "unsub[form_complete_[#{b[:value]}]]")  %>
+                    <%= label_tag("unsub[form_complete[#{b[:name]}]][#{b[:value]}]]", b[:value]) %>
                   </div>
                   <% end %>
                 </fieldset>
@@ -37,43 +38,8 @@
         <%= submit_tag "validate", class: "initial-pos validate-form" %>
     <% end %>
     </div>
-    <div class="col-lg-5">
-      <h2 class="text-center">Aperçu</h2>
-      <div class="letter-container">
-        <ul id="preview-letter" class="list-unstyled">
-        </ul>
-      </div>
-    </div>
   </div>
 </div>
-<script>
-function shareOnFB() {
- FB.ui({
-        method: "feed",
-        link: "http://w3lessons.info",
-        picture: "http://w3lessons.info/logo_large.png",
-        name: "W3lessons - PHP, MYSQL, HTML5, CSS3, jQuery, Ajax, Facebook Style Scripts",
-        caption: 'w3lessons.info',
-        description: "w3lessons.info is a programming blog maintained by Karthikeyan K. Tutorials focused on Programming, Jquery, Ajax, PHP,HTML5, CSS3, Web Design  and MySQL"
-      }, function(t){
-        var str = JSON.stringify(t);
-        var obj = JSON.parse(str);
-        if(obj.post_id != '')
-        {
-           //after successful sharing, you can show your download content here
-        }
-      });
-}
-
-</script>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 
 
 
