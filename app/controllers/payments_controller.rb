@@ -23,14 +23,16 @@ class PaymentsController < ApplicationController
 
     #@order.update(payment: charge.to_json, state: 'paid')
 
+    UserMailer.unsub_email(@unsub.user).deliver_now
     #redirect_to _path(@order)
 
     rescue Stripe::CardError => e
       flash[:error] = e.message
       redirect_to unsub_payment_path(@unsub)
   end
-<<<<<<< HEAD
 
-=======
->>>>>>> master
+  def show
+    @unsub = Unsub.find(params[:unsub_id])
+  end
+
 end

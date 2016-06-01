@@ -34,7 +34,6 @@ gem "geocoder"
 gem 'carrierwave'
 gem 'pdfkit'
 gem 'wkhtmltopdf-binary'
-gem 'mail'
 
 group :development, :test do
   gem 'binding_of_caller'
@@ -44,7 +43,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'spring'
   gem 'faker'
-
+  gem "letter_opener"
 end
 
 group :production do

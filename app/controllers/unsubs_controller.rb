@@ -57,17 +57,17 @@ class UnsubsController < ApplicationController
 
   end
 
-  def show
+  # def show
 
-    @unsub = Unsub.find(params[:id])
+  #   @unsub = Unsub.find(params[:id])
 
-  end
+  # end
 
 
-  def generate_pdfs
+  def generate_pdf
 
     @unsub = Unsub.find(params[:unsub_id])
-    html = render_to_string(layout: false, action: "show")
+    html = render_to_string(layout: false, controller: "payments", action: "new")
 
     kit = PDFKit.new(html, :page_size => 'Letter')
     # kit.stylesheets << Rails.root.to_s + "/public" + view_context.asset_path("application.css")
@@ -96,7 +96,6 @@ class UnsubsController < ApplicationController
     file = File.read('app/assets/ugc.json')
     @hash_service = JSON.parse(file, symbolize_names: :true)[:fields]
   end
-
 
 
   def unsub_params

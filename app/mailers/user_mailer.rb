@@ -1,9 +1,8 @@
 class UserMailer < ApplicationMailer
   default from: 'notifications@example.com'
 
-  def welcome_email(user)
+  def unsub_email(user)
     @user = user
-    @url  = 'http://example.com/login'
     mail(to: @user.email, subject: 'Freeme - Votre désinscription')
   end
 

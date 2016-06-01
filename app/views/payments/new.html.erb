@@ -16,7 +16,7 @@
           data-currency="EUR"></script>
       <% end %>
     </div>
-<<<<<<< HEAD
+
 
     <div class="service text-right" style="position: absolute; top: 0px; right: 50px;">
       <p><%= @unsub.service.company %></p>
@@ -50,10 +50,10 @@
   </div>
 
   <div class="signature">
-    <p><%= @unsub.form_complete["firstname"] %> <%= @unsub.form_complete["lastname"] %></p>
+    <p><%= @unsub.user.firstname %> <%= @unsub.user.lastname %></p>
   </div>
 
-  <%= link_to unsub_payments_path(@unsub.service, @unsub), :class => "button-red" do %> <i class="fa fa-file-text-o" aria-hidden="true"></i> Télécharger ma lettre <% end %>
+  <%= link_to unsub_payments_path(@unsub), :class => "button-red" do %> <i class="fa fa-file-text-o" aria-hidden="true"></i> Télécharger ma lettre <% end %>
 
 </div>
 
@@ -80,8 +80,7 @@
         data-amount="<%= @unsub.price_cents %>"
         data-currency="EUR"></script>
     <% end %>
-=======
->>>>>>> master
+
   </div>
 </div>
 
