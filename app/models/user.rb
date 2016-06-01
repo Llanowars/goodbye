@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
          #
   has_many :unsubs
 
+
 end

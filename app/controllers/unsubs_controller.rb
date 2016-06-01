@@ -37,7 +37,7 @@ class UnsubsController < ApplicationController
     @user.save
 
     @service = Service.find(params[:service_id])
-    @unsub = Unsub.new(unsub_params)
+    @unsub = @user.unsubs.new(unsub_params)
     @unsub.form_complete = params[:unsub][:form_complete]
     @unsub.price = 7
 
@@ -46,8 +46,11 @@ class UnsubsController < ApplicationController
     @unsub.purpose = @unsub.form_complete["purpose"]
     @unsub.reason  = @unsub.form_complete["reason"]
     chosen_purpose = @fields.select { |f| f[:value] == @unsub.purpose }.first
-    chosen_reason = chosen_purpose[:choices].select { |choice| choice[:value] == @unsub.reason }.first
-    @unsub.content = chosen_reason[:content]
+
+    if chosen_purpose[:choices]
+      chosen_reason = chosen_purpose[:choices].select { |choice| choice[:value] == @unsub.reason }.first
+      @unsub.content = chosen_reason[:content]
+    end
 
     if @unsub.save
       redirect_to unsub_path(@unsub)
@@ -57,23 +60,10 @@ class UnsubsController < ApplicationController
 
   end
 
-  # def show
+  def show
 
-  #   @unsub = Unsub.find(params[:id])
+    @unsub = Unsub.find(params[:id])
 
-  # end
-
-
-  def generate_pdf
-
-    @unsub = Unsub.find(params[:unsub_id])
-    html = render_to_string(layout: false, controller: "payments", action: "new")
-
-    kit = PDFKit.new(html, :page_size => 'Letter')
-    # kit.stylesheets << Rails.root.to_s + "/public" + view_context.asset_path("application.css")
-
-    send_data(kit.to_pdf, :filename => "#{@unsub.form_complete['firstname']}_#{@unsub.form_complete['lastname']}_#{@unsub.service.name.gsub(" ", "_")}.pdf",
-                          :type => "application/pdf")
   end
 
   # _@unsub.service["service_id"]

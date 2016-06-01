@@ -3,7 +3,7 @@
     <div class="col-lg-9 min-height-screen">
       <h2 class="tx-blue">Fleeme fait le point sur votre situation</h2>
 
-      <%= form_tag(service_unsubs_path)  do %>
+      <%= form_tag(service_unsubs_path(@service))  do %>
         <% @hash_service.each do |d| %>
           <fieldset class="custom-form initial-pos">
             <% if  d[:type] == "radio"%>
