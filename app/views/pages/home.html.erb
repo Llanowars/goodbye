@@ -8,22 +8,22 @@
           <div class="card-service">
             <img src="<%= image_path('ugcilli.png') %>">
             <p>UGC Illimité</p>
+            <%= button_to "Résilier", "/services/1/unsubs/new", class: "button-red", method: :get %>
           </div>
-          <%= button_to "Résilier", "/services/1/unsubs/new", class: "button-red", method: :get %>
         </div>
         <div class="col-lg-4 col-sm-6">
           <div class="card-service">
             <img src="<%= image_path('gaumont.png') %>">
             <p>Carte Gaumont Le Pass</p>
+            <button class="button-red">Résilier</button>
           </div>
-          <button class="button-red">Résilier</button>
         </div>
         <div class="col-lg-4 col-sm-6">
           <div class="card-service">
             <img src="<%= image_path('canal.png') %>">
             <p>Canal+</p>
+            <button class="button-red">Résilier </button>
           </div>
-          <button class="button-red">Résilier </button>
         </div>
       </div>
     </div>
@@ -32,9 +32,9 @@
         <h4>Le service que vous voulez résilier n'est pas encore disponible sur Fleeme ?</h4>
         <p>Donnez-nous son nom pour qu'il soit ajouté rapidement</p>
         <form>
-        <fieldset class="form-group">
+
           <input type="text" class="form-control form-lg" id="" placeholder="">
-        </fieldset>
+
         <button class="btn-white-neg">Ajoutez le vite !</button>
       </div>
     </div>

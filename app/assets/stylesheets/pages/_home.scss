@@ -36,8 +36,10 @@
 }
 
 .card-service {
-  height: 200px;
 
+  border-radius: 3px;
+  background-color: rgb(69, 170, 175);
+  padding: 20px;
 }
 
 .card-service img {
@@ -50,6 +52,7 @@
   padding-top: 1em;
   color: #F3FAFB;
   padding-bottom: 2em;
+
 }
 
 #add-service {
