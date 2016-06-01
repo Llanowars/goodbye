@@ -1,0 +1,39 @@
+.offer-header {
+  background: white;
+  border-radius: 1%;
+  box-shadow: 2px 2px 2px #EE5F5B;
+  padding: 15px;
+  margin-top: 35px;
+  margin-bottom: 50px;
+  height: 177px;
+  width: 420px;
+}
+
+#logo-offer {
+  width: 50px;
+}
+
+.card-offer {
+  background: white;
+  border-radius: 1%;
+  box-shadow: 2px 2px 2px #EE5F5B;
+  padding: 45px;
+  margin-top: 25px;
+  margin-bottom: 50px;
+  height: 480px;
+  width: 420px;
+}
+
+.bg-blue-light {
+  background-color: #30B1B7;
+}
+
+
+.bg-blue-light p h2 {
+  color: white;
+}
+
+#offer-user-card {
+  display: flex;
+  justify-content: space-around;
+}

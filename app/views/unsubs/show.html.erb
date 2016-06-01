@@ -1,58 +1,58 @@
-<div class="container min-height-screen padded-5">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-sm-12">
-      <div class="card-confirmation-title text-center padded-1">
-        <h2 class= "title-show-unsub">Votre lettre personnalisée a bien été générée</h2>
-        <p>Pour terminer votre résiliation, choisissez une des options suivantes:</p>
+<div class="wrapper bg-blue-light">
+  <div class="container text-center">
+    <div class="row" id="offer-user-card">
+      <div class="col-xs-12 col-sm-12 offer-header">
+        <div>
+          <img src="<%= image_path('logo-red.png') %>" id="logo-offer">
+        </div>
+          <h4>Merci <strong><%= @unsub.form_complete["firstname"] %> <%= @unsub.form_complete["lastname"] %></strong>
+        </h4>
+        <p>Sélectionnez votre méthode de résiliation pour <%= @unsub.service.name %></p>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-10 col-lg-offset-1  col-sm-12">
-      <div class="card-confirmation">
-        <div class="row">
-          <div class="col-lg-8 col-sm-12">
-            <h3>Fleeme s' occupe de tout</h3>
-            <ul class="list-unstyled">
-              <li>- Envoi immédiat de votre lettre à <%= @unsub.service.company %></li>
-              <li>- Votre courrier vous est envoyé par mail au format PDF</li>
-              <li>- Nous vous renvoyons l'accusé réception sous 3 jours</li>
-            </ul>
+
+    <div class="container text-center">
+      <div class="row">
+
+          <div class="card-offer text-center">
+              <h4><strong>J'envoie mon courrier</strong></h4>
+            <hr>
+              <h3>0€</h3>
+            <hr>
+              <ul class= "list-unstyled">
+                <li> Fleeme génère votre lettre personnalisée</li>
+                <li> Recevez votre PDF à envoyer</li>
+                <li> Vous envoyez vous même votre recommandé </li>
+              </ul>
+            <hr>
+            <div>
+              <button class="btn-share" onclick="shareOnFB();">Partager</button>
+            </div>
           </div>
-          <div class="col-lg-4 col-sm-12">
-            <h4><%= @unsub.price %> €</h4>
-            <div class="col-lg-4 col-sm-12">
+         <div class="">
+          <div class="card-offer text-center">
+            <h4><strong>Fleeme s'occupe de tout</strong></h4>
+            <hr>
+            <h3>7€</h3>
+            <hr>
+              <ul class= "list-unstyled">
+                <li> Envoi immédiat de votre lettre à <%= @unsub.service.company %></li>
+                <li> Votre courrier vous est envoyé par mail au format PDF</li>
+                <li> Nous vous renvoyons l'accusé réception sous 3 jours </li>
+              </ul>
+            <hr>
+            <div>
               <%= form_tag new_unsub_payment_path(@unsub), method: :get do %>
               <%= hidden_field_tag 'unsub_id', @unsub.id %>
               <%= submit_tag 'Continuer', class: "button-red vcenter"%>
-            <% end %>
+              <% end %>
             </div>
           </div>
         </div>
+
       </div>
     </div>
-  </div>
 
-  <hr>
-
-  <div class="row">
-    <div class="col-lg-10 col-lg-offset-1 col-sm-12">
-      <div class="card-confirmation">
-        <div class="row">
-          <div class="col-lg-8 col-sm-12">
-            <h3>Téléchargez gratuitement</h3>
-            <ul class="list-unstyled">
-              <li>- Génération de votre lettre de résiliation personnalisée</li>
-              <li>- Réception de votre lettre sur votre boîte mail au format PDF</li>
-            </ul>
-          </div>
-          <div class="col-lg-4 col-sm-12">
-            <h5>Partager sur Facebook pour accéder à ma lettre</h5>
-            <button class="btn-blue-neg" onclick="shareOnFB();">Choisir</button>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 
