@@ -66,7 +66,7 @@ class UnsubsController < ApplicationController
 
   def generate_pdf
 
-    @unsub = Unsub.find(params[:unsub_id])
+    @unsub = Unsub.find(params[:id])
     html = render_to_string(layout: false, action: "show")
 
     kit = PDFKit.new(html, :page_size => 'Letter')
