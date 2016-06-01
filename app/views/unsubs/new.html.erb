@@ -1,45 +1,51 @@
 <div class="container ">
   <div class="row">
-    <div class="col-lg-12 min-height-screen">
+    <div class="col-lg-9 min-height-screen">
       <h2 class="tx-blue">Fleeme fait le point sur votre situation</h2>
-      <p id="preview-infos">Vos informations:</p>
+
       <%= form_tag(service_unsubs_path)  do %>
-      <% @hash_service.each do |d| %>
-        <fieldset class="custom-form initial-pos">
-          <% if  d[:type] == "radio"%>
-            <%= label_tag(d[:label], d[:label]) %>
+        <% @hash_service.each do |d| %>
+          <fieldset class="custom-form initial-pos">
+            <% if  d[:type] == "radio"%>
+              <%= label_tag(d[:label], d[:label]) %>
               <% d[:choices].each do |c| %>
-              <div class="radio-field <%=  c[:type] == "radio" && c[:choices] ? "has_sublevel" : "no_sublevel" %>">
-                <%= radio_button_tag("unsub[form_complete[#{c[:name]}]]", c[:value], id: "unsub[form_complete_[#{c[:value]}]]")  %>
-                <%= label_tag("unsub[form_complete[#{c[:name]}]][#{c[:value]}]]", c[:value]) %>
-              </div>
-              <% if c[:type] == "radio" && c[:choices] %>
-                <fieldset class="sublevel hidden initial-pos" >
-                  <%= label_tag(c[:label], c[:label]) %>
-                  <% c[:choices].each do |b| %>
-                  <div class="radio-field">
-                    <%= radio_button_tag("unsub[form_complete[#{b[:name]}]]", b[:value], id: "unsub[form_complete_[#{b[:value]}]]")  %>
-                    <%= label_tag("unsub[form_complete[#{b[:name]}]][#{b[:value]}]]", b[:value]) %>
-                    <%= hidden_field_tag("unsub[form_complete[reason_description]]", b[:content]) %>
-                  </div>
-                  <% end %>
-                  <div class="btn-blue-neg next-button" >Suivant<div>
-                </fieldset>
+                <div class="radio-field <%=  c[:type] == "radio" && c[:choices] ? "has_sublevel" : "no_sublevel" %>">
+                  <%= radio_button_tag("unsub[form_complete[#{c[:name]}]]", c[:value]) %>
+                  <%= label_tag("unsub[form_complete[#{c[:name]}]][#{c[:value]}]]", c[:value]) %>
+                </div>
+              <% end %>
+              <div class="btn-blue-neg next-button-radio" >Suivant Radio</div>
+            <% else %>
+              <%= label_tag(d[:label], d[:label]) %>
+              <%= content_tag(:input, nil, type: d[:type], name: "unsub[form_complete[#{d[:name]}]]", class: "input-text ") %>
+              <div class="btn-blue-neg next-button" >Suivant</div>
+            <% end %>
+          </fieldset>
+            <% if d[:type] == "radio" %>
+              <% d[:choices].each do |c| %>
+                <%if  c[:type] == "radio" && c[:choices] %>
+                  <fieldset class="sublevel initial-pos bg-red <%= sanitize_to_id("unsub_form_complete_#{c[:name]}_#{c[:value]}") %>" >
+                    <%= label_tag(c[:label], c[:label]) %>
+                    <% c[:choices].each do |b| %>
+                      <div class="radio-field <%= b[:type] == "radio" && b[:choices] ? "has_sublevel" : "no_sublevel" %>">
+                        <%= radio_button_tag("unsub[form_complete[#{b[:name]}]]", b[:value], id: "unsub[form_complete_[#{b[:value]}]]")  %>
+                        <%= label_tag("unsub[form_complete[#{b[:name]}]][#{b[:value]}]]", b[:value]) %>
+                        <%= hidden_field_tag("unsub[form_complete[reason_description]]", b[:content]) %>
+                      </div>
+                    <% end %>
+                    <div class="btn-blue-neg next-button-radio" >Suivant Radio</div>
+                  </fieldset>
               <% end %>
             <% end %>
-          <%else %>
-          <%= label_tag(d[:label], d[:label]) %>
-          <%= content_tag(:input, nil, type: d[:type], name: "unsub[form_complete[#{d[:name]}]]", class: "input-text ") %>
           <% end %>
-          <div class="btn-blue-neg next-button" >Suivant<div>
-        </fieldset>
         <% end %>
+
         <fieldset class="initial-pos upload-file">
           <div>
             <%= form_tag "/profiles/update", :multipart => true  %>
             <%= file_field_tag :photo  %>
           </div>
-          <div class="btn-blue-neg next-button" >Suivant<div>
+          <div class="btn-blue-neg next-button" >Suivant</div>
         </fieldset>
         <fieldset class="initial-pos validate-unsub">
           <p>Vos informations sont bien enregistrées.</p>
@@ -47,9 +53,28 @@
         </fieldset>
     <% end %>
     </div>
+
   </div>
 </div>
+<div class="wrapper preview-box">
+  <div class="row">
+    <div class="col-lg-12">
+      <ul id="preview-title" class="list-unstyled list-inline">
+          <li><i class="fa fa-file-text-o" aria-hidden="true"></i> Vos informations</li>
+          <li class="preview-legend">En cas d'erreur, cliquez sur un élément pour le modifier</li>
+        </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="">
+        <ul id="preview-infos" class="list-unstyled list-inline">
 
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
