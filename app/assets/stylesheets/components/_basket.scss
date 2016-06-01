@@ -1,0 +1,45 @@
+.page-basket {
+  background-color: #F9F9F9;
+}
+
+.basket-box {
+  background-color: #FFF;
+  margin-top: 20px;
+}
+
+.basket-title-row {
+  background-color: #F9F9F9;
+  margin-top: 10vh;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.basket-title {
+  padding: 20px;
+  font-size: 1.1em;
+  color: #6D6D6D;
+}
+
+.basket-content {
+  background-color: #FFF;
+  padding: 20px;
+
+  border-radius: 0px 0px 5px 5px;
+  box-shadow: 0 1px 10px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+}
+
+.basket-content h5 {
+  border-left: solid 2px #6D6D6D;
+  color: #6D6D6D;
+  padding-left: 10px;
+}
+
+.basket-content ul li {
+  padding: 10px;
+
+}
+
+
+.basket-content .fa {
+  color: #26BB9B;
+  padding: 5px;
+}
