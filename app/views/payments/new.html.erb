@@ -1,18 +1,22 @@
 <div class="container min-height-screen">
+  <div class="container">
+    <div class="text-right">
+      <%= form_tag unsub_payments_path(@unsub) do %>
+        <article>
+          <label class="amount">
+            <span>Prix: <%= @unsub.price_cents.to_f/100 %>€</span>
+          </label>
+        </article>
 
-  <div class="text-center">
-    <h1>Aperçu de votre courrier Fleeme</h1>
-  </div>
-
-  <hr>
-
-  <div class="container" style="position: relative;">
-    <div class="user">
-      <p><%= @unsub.form_complete["firstname"] %> <%= @unsub.form_complete["lastname"] %></p>
-      <p><%= @unsub.form_complete["address"] %></p>
-      <p><%= @unsub.form_complete["address_complement"] %></p>
-      <p><%= @unsub.form_complete["zipcode"] %> <%= @unsub.form_complete["city"] %></p>
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-name="My Fleeme"
+          data-description="Fleeme <%= @unsub %>"
+          data-amount="<%= @unsub.price_cents %>"
+          data-currency="EUR"></script>
+      <% end %>
     </div>
+<<<<<<< HEAD
 
     <div class="service text-right" style="position: absolute; top: 0px; right: 50px;">
       <p><%= @unsub.service.company %></p>
@@ -76,6 +80,8 @@
         data-amount="<%= @unsub.price_cents %>"
         data-currency="EUR"></script>
     <% end %>
+=======
+>>>>>>> master
   </div>
 </div>
 

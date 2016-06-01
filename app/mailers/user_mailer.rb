@@ -7,5 +7,5 @@ class UserMailer < ApplicationMailer
     mail(to: @user.email, subject: 'Freeme - Votre désinscription')
   end
 
-  attachments['filename.jpg'] = File.read('/path/to/filename.jpg')
+  # attachments['filename.jpg'] = File.read('/path/to/filename.jpg')
 end

@@ -29,5 +29,8 @@ class PaymentsController < ApplicationController
       flash[:error] = e.message
       redirect_to unsub_payment_path(@unsub)
   end
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 end
