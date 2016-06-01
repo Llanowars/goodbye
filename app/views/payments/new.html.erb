@@ -36,25 +36,28 @@
   </div>
 
   <div class="body">
-    <p>Madame, Monsieur</p>
+    <p>Madame, Monsieur,</p>
 
     <p><%= @unsub.content %></p>
 
     <p>Je vous prie de supprimer de vos fichiers toute information relative à mes coordonnées postales et bancaires. Je m'oppose en particulier à toute utilisation, ou mise à disposition à des organismes extérieurs, de mes coordonnées personnelles à des fins commerciales.</p>
 
-    <p>Veuillez accepter Madame, Monsieur l' expression de mes salutations distinguées.</p>
+    <p>Veuillez accepter Madame, Monsieur, l' expression de mes salutations distinguées.</p>
   </div>
 
   <div class="signature">
     <p><%= @unsub.form_complete["firstname"] %> <%= @unsub.form_complete["lastname"] %></p>
   </div>
+
+  <%= link_to unsub_payments_path(@unsub.service, @unsub), :class => "button-red" do %> <i class="fa fa-file-text-o" aria-hidden="true"></i> Télécharger ma lettre <% end %>
+
 </div>
 
 <hr>
 
 <div class="container">
   <div class="text-left">
-    <%= link_to unsub_generate_pdf_path(@unsub.service, @unsub), :class => "button-red" do %> <i class="fa fa-file-text-o" aria-hidden="true"></i> Télécharger ma lettre <% end %>
+
   </div>
 
   <div class="text-right"><%= form_tag do %>

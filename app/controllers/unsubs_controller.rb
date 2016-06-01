@@ -61,10 +61,10 @@ class UnsubsController < ApplicationController
 
     @unsub = Unsub.find(params[:id])
 
-
   end
 
-  def generate_pdf
+
+  def generate_pdfs
 
     @unsub = Unsub.find(params[:unsub_id])
     html = render_to_string(layout: false, action: "show")
@@ -80,7 +80,6 @@ class UnsubsController < ApplicationController
 
   def send_email
     @unsub = Unsub.find(params[:unsub_id])
-
     @mail = Mail.new
     @mail.add_file("/tmp/file.pdf")
   end

@@ -30,8 +30,4 @@ class PaymentsController < ApplicationController
       redirect_to unsub_payment_path(@unsub)
   end
 
-  def show
-
-  end
-
 end
