@@ -56,13 +56,38 @@
     </div>
   </div>
 </div>
-<div class="wrapper bg-red">
-  <div class="row">
-    <h3 class="tx-white text-center padded-2">Services disponibles</h3>
-    <ul class="list-unstyled list-inline text-center padded-2">
-      <li><img src="http://placehold.it/150x150"></li>
-      <li><img src="http://placehold.it/150x150"></li>
-      <li><img src="http://placehold.it/150x150"></li>
-    </ul>
+
+<div class="wrapper-users bg-blue">
+  <div class="container">
+    <h3 class= "text-center">Ce que nos utilisateurs disent de nous</h3>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <div class="card rounded-corners text-center">
+          <img class="card-user-avatar" src="<%= image_path('dimitri.jpg') %>">
+          <div class="card-user-name">Dimitri</div>
+          <div class="card-description">
+            <p>Que de temps gagné grâce à Fleeme. En 5 min j' ai résilié mon abonnement Canal + !</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card rounded-corners text-center">
+          <img class="card-user-avatar" src="<%= image_path('alice.jpg') %>">
+          <div class="card-user-name">Alice</div>
+          <div class="card-description">
+            <p>Exit tous mes abonnements lorsque j' ai décroché mon job à San Francisco</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card rounded-corners text-center">
+          <img class="card-user-avatar" src="<%= image_path('eric.jpg') %>">
+          <div class="card-user-name">Eric</div>
+          <div class="card-description">
+            <p>Fleeme me permet de résilier mes contrats les yeux fermés !</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
