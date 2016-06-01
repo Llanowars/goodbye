@@ -21,7 +21,7 @@
           </div>
           <div class="col-lg-4 col-sm-12">
             <h4><%= @unsub.price %> €</h4>
-            <div class="col-lg-4 col-sm-12">
+            <div class="col-lg-4 col-sm-12 premium-card">
               <%= form_tag new_unsub_payment_path(@unsub), method: :get do %>
               <%= hidden_field_tag 'unsub_id', @unsub.id %>
               <%= submit_tag 'Continuer', class: "button-red vcenter"%>
