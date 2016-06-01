@@ -3,6 +3,12 @@ fieldset.custom-form {
   width: 100%
 }
 
+fieldset.sublevel {
+  display: none;
+  transition: all .5s cubic-bezier(.4, .25, .8, .3);
+  width: 100%
+}
+
 fieldset > input {
   width:100%
 }
@@ -21,11 +27,24 @@ fieldset.validate-unsub {
   top: 20px;
 }
 
+.next-button-radio {
+  width: 25%;
+  position: relative;
+  top: 20px;
+}
+
 .initial-pos {
   position: absolute;
   top: 80vh;
   opacity: 0;
 }
+
+.initial-pos-sub {
+  position: absolute;
+  top: 0vh;
+  opacity: 0;
+}
+
 .min-height-screen {
   min-height: calc(100vh - 30px);
 }
@@ -57,4 +76,41 @@ fieldset.custom-form label {
   font-weight: normal;
   font-size: 0.9em;
   color: #30B1B7;
+}
+
+.preview-data {
+  padding: 6px;
+  color: #333;
+  font-size: 1em;
+  border: solid 1px #30B1B7;
+  background-color: #FFF;
+  border-radius: 4px;
+  margin: 5px;
+}
+
+#preview-title {
+  background-color: rgba(48, 177, 183, 0.72);
+  color: #FFF;
+  padding: 15px;
+}
+
+#preview-infos {
+  padding: 15px;
+}
+
+.preview-label {
+  font-size: 0.9em;
+  color: #777777;
+}
+
+.preview-legend {
+  font-size: 0.8em;
+  padding-top:5px;
+}
+
+.preview-box {
+  position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background-color: rgba(48, 177, 183, 0.31);
 }
