@@ -24,7 +24,7 @@
             <% if d[:type] == "radio" %>
               <% d[:choices].each do |c| %>
                 <%if  c[:type] == "radio" && c[:choices] %>
-                  <fieldset class="sublevel initial-pos bg-red <%= sanitize_to_id("unsub_form_complete_#{c[:name]}_#{c[:value]}") %>" >
+                  <fieldset class="sublevel initial-pos <%= sanitize_to_id("unsub_form_complete_#{c[:name]}_#{c[:value]}") %>" >
                     <%= label_tag(c[:label], c[:label]) %>
                     <% c[:choices].each do |b| %>
                       <div class="radio-field <%= b[:type] == "radio" && b[:choices] ? "has_sublevel" : "no_sublevel" %>">
