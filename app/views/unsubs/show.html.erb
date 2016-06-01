@@ -1,3 +1,51 @@
+<div class="wrapper bg-blue-light">
+  <div class="container text-center">
+    <h3>Merci <%= @unsub.form_complete["firstname"] %> <%= @unsub.form_complete["lastname"] %>
+    </h3>
+    <p>Sélectionnez votre méthode de résiliation pour <%= @unsub.service.name %></p>
+    <div class="col-xs-12 col-sm-6">
+      <div class="card-offer text-center">
+        <hr>
+        <h3 class="card-offer-price">Basic</h3>
+        <hr>
+          <ul>
+            <li>- Génération de votre lettre de résiliation personnalisée</li>
+            <li>- Réception de votre lettre sur votre boîte mail au format PDF</li>
+          </ul>
+        <hr>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="card-offer text-center">
+        <hr>
+        <h3 class="card-offer-price">Premium</h3>
+        <hr>
+          <ul>
+            <li>- Envoi immédiat de votre lettre à <%= @unsub.service.company %></li>
+            <li>- Votre courrier vous est envoyé par mail au format PDF</li>
+            <li>- Nous vous renvoyons l'accusé réception sous 3 jours</li>
+          </ul>
+        <hr>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="container min-height-screen padded-5">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-sm-12">
