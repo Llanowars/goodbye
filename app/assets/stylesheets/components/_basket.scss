@@ -8,7 +8,7 @@
 }
 
 .basket-title-row {
-  background-color: #F9F9F9;
+  background-color: #30B1B7;
   margin-top: 10vh;
   border-radius: 5px 5px 0px 0px;
 }
@@ -16,7 +16,11 @@
 .basket-title {
   padding: 20px;
   font-size: 1.1em;
-  color: #6D6D6D;
+  color: #FFF;
+}
+
+.basket-user-infos {
+  padding-left: 20px
 }
 
 .basket-content {
@@ -28,18 +32,37 @@
 }
 
 .basket-content h5 {
-  border-left: solid 2px #6D6D6D;
-  color: #6D6D6D;
-  padding-left: 10px;
+  color: #30B1B7;
+  font-weight: bold;
 }
 
-.basket-content ul li {
-  padding: 10px;
-
+.basket-product-details {
+  padding-left: 20px
 }
 
+.product-detail {
+  border-bottom: solid 1px #F5F5F5;
+  padding-top: 10px;
+}
+
+.detail-price {
+  color: #30B1B7;
+}
+
+.detail-name {
+  color: #5F5F5F;
+}
 
 .basket-content .fa {
   color: #26BB9B;
   padding: 5px;
+}
+
+.basket-price p {
+  padding-top: 20px;
+  font-size: 1.2em;
+}
+
+.basket-price #price {
+  padding-left: 30px;
 }
