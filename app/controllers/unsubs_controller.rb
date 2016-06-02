@@ -66,8 +66,6 @@ class UnsubsController < ApplicationController
 
   end
 
-  # _@unsub.service["service_id"]
-
   def send_email
     @unsub = Unsub.find(params[:unsub_id])
     @mail = Mail.new

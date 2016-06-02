@@ -276,8 +276,8 @@ DEPENDENCIES
   puma
   quiet_assets
   rails (= 4.2.6)
-  rails-assets-bootstrap-datepicker
-  rails-assets-underscore
+  rails-assets-bootstrap-datepicker!
+  rails-assets-underscore!
   rails_12factor
   redis
   sass-rails

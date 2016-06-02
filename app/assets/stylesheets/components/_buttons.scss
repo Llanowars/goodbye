@@ -1,3 +1,19 @@
+.btn-share {
+  border: solid 1px #30B1B7;
+  color: #30B1B7;
+  padding: 7px;
+  border-radius: 3px;
+  text-decoration: none;
+  background-color: white;
+  width: 115px;
+  font-size: 18px;
+  margin-top: 35px;
+}
+
+.btn-share:hover {
+  background-color: rgba(230, 230, 230,0.2);
+}
+
 .btn-blue-neg {
   border: solid 1px #30B1B7;
   color: #30B1B7;
@@ -5,19 +21,19 @@
   border-radius: 3px;
   text-decoration: none;
   margin-right: 30px;
-  background-color: #F5F5F5;
+  background-color: white;
 }
 
 .btn-blue-neg:hover {
   color: #30B1B7;
   text-decoration: none;
-  background-color: #F5F5F5;
+  background-color: rgba(230, 230, 230,0.2);
 }
 
 .btn-blue-neg:focus {
   color: #30B1B7;
   text-decoration: none;
-  background-color: #F5F5F5;
+  background-color: rgba(230, 230, 230,0.2);
 }
 
 .button-red {

@@ -1,20 +1,67 @@
-<div class="container min-height-screen">
-  <div class="container">
-    <div class="text-right">
-      <%= form_tag unsub_payments_path(@unsub) do %>
-        <article>
-          <label class="amount">
-            <span>Prix: <%= @unsub.price_cents.to_f/100 %>€</span>
-          </label>
-        </article>
-
-        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-name="My Fleeme"
-          data-description="Fleeme <%= @unsub %>"
-          data-amount="<%= @unsub.price_cents %>"
-          data-currency="EUR"></script>
-      <% end %>
+<div class="div min-height-screen page-basket">
+  <div class="wrapper header-basket bg-blue">
+    <div class="container">
+      <div class="basket-title-row">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="basket-title">
+              <i class="fa fa-credit-card" aria-hidden="true"></i>
+              <i class="fa fa-lock" aria-hidden="true"></i>
+              Paiement sécurisé
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper page-basket">
+    <div class="container">
+      <div class="basket-content">
+        <div class="row">
+          <div class="col-lg-3">
+            <h5>VOS INFORMATIONS</h5>
+            <p><%=@unsub.form_complete["firstname"]%> <%= @unsub.form_complete["lastname"]%></p>
+            <p><%=@unsub.form_complete["address"]%></p>
+            <p><%=@unsub.form_complete["zipcode"]%></p>
+            <p><%=@unsub.form_complete["city"]%></p>
+          </div>
+          <div class="col-lg-9">
+            <h5>VOTRE COMMANDE</h5>
+            <div class="basket-product-name">
+              <h4>Résiliation automatique Fleeme pour <%= @unsub.service.name %></h4>
+            </div>
+            <div class="basket-product-detail">
+              <h6>Services inclus:</h6>
+              <ul class="list-unstyled">
+                <li><i class="fa fa-check fa-lg" aria-hidden="true"></i>Génération de votre lettre personnalisée</li>
+                <li><i class="fa fa-check fa-lg" aria-hidden="true"></i>Envoi de votre lettre personnalisée en recommandé avec accusé de réception à <%= @unsub.service.name %></li>
+                <li><i class="fa fa-check fa-lg" aria-hidden="true"></i>Réception d'une copie de votre lettre de résiliation sur votre boîte email</li>
+                <li><i class="fa fa-check fa-lg" aria-hidden="true"></i>Réception de votre preuve d'envoi délivré par La Poste sur votre boîte mail sous 24h</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-lg-12">
+            <%= form_tag unsub_payments_path(@unsub) do %>
+              <div class="basket-price text-right">
+                <p>MONTANT TOTAL: <span id="price">7 €</span>
+              </div>
+              <hr>
+              <div class="checkout-button-row text-right">
+                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-name="Paiement Fleeme"
+                  data-description="Résiliation <%= @unsub.service.name %> "
+                  data-amount="<%= @unsub.price_cents %>"
+                  data-currency="EUR">
+                </script>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
 
 
@@ -83,5 +130,4 @@
 
   </div>
 </div>
-
 
