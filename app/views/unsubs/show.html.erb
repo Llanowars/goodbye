@@ -105,7 +105,7 @@ function shareOnFB() {
  FB.ui({
         method: "feed",
         link: "www.fleeme.fr",
-        picture: "http://2d28c608.ngrok.io/assets/fbpicture.jpg",
+        picture: "<%= image_url meta_image %>",
         name:"<%= meta_title %>",
         caption: 'www.fleeme.fr',
         description: "<%= meta_description %>"
@@ -126,7 +126,7 @@ function shareOnFB() {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1183544908331736=&version=v2.5";
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=<%= ENV["FACEBOOK_KEY"]%>=&version=v2.5";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
