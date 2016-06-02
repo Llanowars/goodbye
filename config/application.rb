@@ -34,5 +34,5 @@ module Goodbye
   end
 end
 
-config.action_mailer.delivery_method = :postmark
-config.action_mailer.postmark_settings = { :api_token => "your-api-token" }
+# config.action_mailer.delivery_method = :postmark
+# config.action_mailer.postmark_settings = { :api_token => "your-api-token" }
