@@ -33,3 +33,6 @@ module Goodbye
     config.active_record.raise_in_transactional_callbacks = true
   end
 end
+
+config.action_mailer.delivery_method = :postmark
+config.action_mailer.postmark_settings = { :api_token => "your-api-token" }

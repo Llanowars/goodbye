@@ -48,4 +48,5 @@ end
 
 group :production do
   gem 'rails_12factor'
+  gem 'postmark-rails', '~> 0.12.0'
 end
