@@ -40,33 +40,78 @@
     </div>
   </div>
 </div>
-<div class="wrapper" id="howto">
-  <div class="row row-home">
-    <div class="col-lg-4 col-lg-offset-2 col-xs-12">
-      <h3  class="tx-red padded-1">Comment ça marche ?</h3>
-      <ul class="list-unstyled flex-list">
-        <li class="padded-1"><div class="bullet-home">1</div><p>Complétez les informations demandées</p></li>
-        <li class="padded-1"><div class="bullet-home">2</div><p>Fleeme génère dynamiquement le courrier adapté à votre situation</p></li>
-        <li class="padded-1"><div class="bullet-home">3</div><p>Recevez une confirmation quand le recommandé est envoyé</p></li>
-        <li class="padded-1"><div class="bullet-home">4</div><p>Résilier n' a jamais été aussi simple !</p></li>
-      </ul>
+
+  <div class="container-fluid" id="howto">
+    <div class="row row-home">
+      <div class="col-lg-4 col-lg-offset-2 col-xs-12">
+        <h3  class="tx-red padded-1">Comment ça marche ?</h3>
+        <div class="home-market-line">
+          <div class="bullet-home">1</div>
+          <p>Complétez les informations demandées</p>
+        </div>
+        <div class="home-market-line">
+          <div class="bullet-home">2</div>
+          <p>Fleeme génère dynamiquement le courrier adapté à votre situation</p>
+        </div>
+        <div class="home-market-line">
+          <div class="bullet-home">3</div>
+          <p>Recevez une confirmation quand le recommandé est envoyé</p>
+        </div>
+        <div class="home-market-line">
+          <div class="bullet-home">4</div>
+          <p>Résilier n' a jamais été aussi simple !</p>
+        </div>
+      </div>
+      <div class="col-lg-6   hidden-md">
+        <div class="row-bg-image" style="background-image: linear-gradient(-268deg, rgb(255, 255, 255) 3%, rgba(255, 255, 255, 0.31) 28%),  url('<%= image_path('bed.jpg') %>');"></div>
+      </div>
     </div>
-    <div class="col-lg-6   hidden-md">
-      <div class="row-bg-image" style="background-image: linear-gradient(-268deg, rgb(255, 255, 255) 3%, rgba(255, 255, 255, 0.31) 28%),  url('<%= image_path('bed.jpg') %>');"></div>
+  </div>
+
+<div class="bg-blue">
+  <div class="container">
+    <h3 class= "text-center padded-2 tx-white">Les garanties Fleeme</h3>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4 card-market">
+        <div class=" text-center">
+          <img class="card-market-image" src="<%= image_path('home-market-icons-01.png') %>">
+          <div class="card-market-name tx-white">Suivi de courrier La Poste</div>
+          <div class="card-market-description">
+            <p>À tout moment, suivez l'acheminement de votre courrier de résiliation</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4 card-market">
+        <div class=" text-center">
+          <img class="card-market-image" src="<%= image_path('home-market-icons-02.png') %>">
+          <div class="card-market-name tx-white">Courrier recommandé AR</div>
+          <div class="card-description">
+            <p>"Exit tous mes abonnements lorsque j' ai décroché mon job à San Francisco !"</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4 card-market">
+        <div class=" text-center">
+          <img class="card-market-image" src="<%= image_path('home-market-icons-03.png') %>">
+          <div class="card-market-name tx-white">Paiement sécurisé</div>
+          <div class="card-market-description">
+            <p>"Fleeme me permet de résilier mes contrats les yeux fermés !"</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
-<div class="wrapper-users bg-blue">
+<div class="wrapper-users bg-red">
   <div class="container">
-    <h3 class= "text-center">Ce que nos utilisateurs disent de nous</h3>
+    <h3 class= "text-center padded-2">Ce que nos utilisateurs disent de nous</h3>
     <div class="row">
       <div class="col-xs-12 col-sm-4">
         <div class="card rounded-corners text-center">
           <img class="card-user-avatar" src="<%= image_path('dimitri.jpg') %>">
           <div class="card-user-name">Dimitri</div>
           <div class="card-description">
-            <p>Que de temps gagné grâce à Fleeme. En 5 min j' ai résilié mon abonnement Canal + </p>
+            <p>"Que de temps gagné grâce à Fleeme. En 5 min j' ai résilié mon abonnement Canal+"</p>
           </div>
         </div>
       </div>
@@ -75,7 +120,7 @@
           <img class="card-user-avatar" src="<%= image_path('alice.jpg') %>">
           <div class="card-user-name">Alice</div>
           <div class="card-description">
-            <p>Exit tous mes abonnements lorsque j' ai décroché mon job à San Francisco</p>
+            <p>"Exit tous mes abonnements lorsque j' ai décroché mon job à San Francisco !"</p>
           </div>
         </div>
       </div>
@@ -84,10 +129,13 @@
           <img class="card-user-avatar" src="<%= image_path('eric.jpg') %>">
           <div class="card-user-name">Eric</div>
           <div class="card-description">
-            <p>Fleeme me permet de résilier mes contrats les yeux fermés !</p>
+            <p>"Fleeme me permet de résilier mes contrats les yeux fermés !"</p>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+<div class="wrapper bg-blue">
+
 </div>
