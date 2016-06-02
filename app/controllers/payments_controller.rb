@@ -11,7 +11,7 @@ class PaymentsController < ApplicationController
 
     @unsub = Unsub.find(params[:unsub_id])
     @service = @unsub.service
-    html = render_to_string(layout: false, action: "show")
+    html = render_to_string(layout: false, action: "create")
 
     kit = PDFKit.new(html, :page_size => 'Letter')
     # kit.stylesheets << Rails.root.to_s + "/public" + view_context.asset_path("application.css")
