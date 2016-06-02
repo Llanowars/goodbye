@@ -14,7 +14,7 @@
                   <%= label_tag("unsub[form_complete[#{c[:name]}]][#{c[:value]}]]", c[:value]) %>
                 </div>
               <% end %>
-              <div class="btn-blue-neg next-button-radio" >Suivant Radio</div>
+              <div class="btn-blue-neg next-button-radio" >Suivant</div>
             <% else %>
               <%= label_tag(d[:label], d[:label]) %>
               <%= content_tag(:input, nil, type: d[:type], name: "unsub[form_complete[#{d[:name]}]]", class: "input-text ") %>
@@ -33,7 +33,7 @@
                         <%= hidden_field_tag("unsub[form_complete[reason_description]]", b[:content]) %>
                       </div>
                     <% end %>
-                    <div class="btn-blue-neg next-button-radio" >Suivant Radio</div>
+                    <div class="btn-blue-neg next-button-radio" >Suivant</div>
                   </fieldset>
               <% end %>
             <% end %>
@@ -45,7 +45,7 @@
             <%= form_tag "/profiles/update", :multipart => true  %>
             <%= file_field_tag :photo  %>
           </div>
-          <div class="btn-blue-neg next-button" >Suivant</div>
+          <div class="btn-blue-neg next-button button-upload" >Suivant</div>
         </fieldset>
         <fieldset class="initial-pos validate-unsub">
           <p>Vos informations sont bien enregistrées.</p>
