@@ -24,10 +24,6 @@
   padding: 20px;
 }
 
-#logo-offer {
-  width: 90px;
-}
-
 #logo-free {
   width: 90px;
 }
@@ -46,6 +42,14 @@
 
 .card-description-free {
   padding: 20px;
+}
+
+.card-description-free p, ul  {
+  color: grey;
+}
+
+.list-offer {
+  margin-top: 20px;
 }
 
 .blue-text {
