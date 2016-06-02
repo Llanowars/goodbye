@@ -20,12 +20,20 @@
   padding-bottom: 5em;
 }
 
+.first-after-banner {
+  margin-top: 1px;
+}
+
 // Backgrounds
 .bg-black {
   background: #4a4a4a;
 }
 .bg-grey {
   background: #aeaeae;
+}
+
+.bg-grey-light {
+  background-color: #E8E8E8;
 }
 
 .bg-dark-blue {
@@ -52,6 +60,6 @@
   color: #FFF
 }
 
-tx-grey {
+.tx-grey {
   color: #717171
 }

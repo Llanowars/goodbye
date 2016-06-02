@@ -1,70 +1,69 @@
-<div class="wrapper bg-grey" id="header-grey">
-</div>
-
-<div class="wrapper">
+<div class="wrapper first-after-banner">
   <div class="container text-center">
-    <div class="row" id="offer-user-card">
+    <div class="row">
       <div class="col-lg-12 col-sm-12 offer-header">
-        <h2>Merci <strong><%= @unsub.form_complete["firstname"].capitalize %> <%= @unsub.form_complete["lastname"].capitalize %></strong> pour vos informations</h2>
+        <h2 class="tx-blue">Merci <strong><%= @unsub.form_complete["firstname"] %> <%= @unsub.form_complete["lastname"] %></strong> pour vos informations</h2>
         <p>Nous sommes maintenant en mesure de créer votr courrier personnalisé pour <%= @unsub.service.name %></p>
-        <h4>Afin de poursuivre, choisissez votre méthode de résiliation ci-dessous</h4>
+        <h4 class="tx-blue">Afin de poursuivre, choisissez votre méthode de résiliation ci-dessous.</h4>
       </div>
     </div>
   </div>
 </div>
-<div class="wrapper bg-grey">
+<div class="wrapper bg-grey-light">
   <div class="container padded-2">
     <div class="row">
-      <div class="col-lg-6 col-md-12 ">
-        <div class="card-offer-free text-center">
-          <div class="wrapper header-blue">
-            <img src="<%= image_path('Fleeme-02.png') %>" id="logo-free">
+      <div class="col-lg-6 col-sm-12 ">
+        <div class="card-offer text-center">
+          <div class="wrapper card-offer-header bg-blue">
+            <img src="<%= image_path('Fleeme-02.png') %>" class="logo-offer">
           </div>
-          <div class="card-description-free">
-            <h4 class= "blue-text" id= "card-pres"><strong>TELECHARGEMENT DE VOTRE LETTRE PERSONNALISEE SANS ENVOI</strong></h4>
-            <div class="list-offer text-left">
+          <div class="card-description">
+            <div class="card-offer-title tx-blue">
+              <h4><strong>TÉLÉCHARGEMENT DE VOTRE LETTRE PERSONNALISÉE SANS ENVOI</strong></h4>
+            </div>
+            <div class="list-offer text-left tx-grey">
               <ul>
-                <li> Fleeme génère votre lettre personnalisée</li>
-                <li> Téléchargez votre courrier à envoyer (format PDF)</li>
+                <li>Fleeme génère votre lettre personnalisée</li>
+                <li>Téléchargez votre courrier à envoyer (format PDF)</li>
               </ul>
+              <p>Cette méthode n'inclut pas l'envoi automatique Fleeme. Nous vous indiquons toutefois l'adresse du service concerné</p>
             </div>
-            <div class="p-offer">
-              <p>Cette méthode n'inclut pas l'envoi automatique Fleeme. Nous vous indiquons toutefois l' adresse du service concerné</p>
-            </div>
-            <div class="price">
-              <h1 class=" blue-text">GRATUIT</h1>
+            <div class="price tx-blue">
+              <h1>GRATUIT</h1>
+              <p>(Nécessite de partager Fleeme sur Facebook)</p>
             </div>
             <div>
-              <button class="btn-share" onclick="shareOnFB();">Partager</button>
+              <button class="btn-blue-neg" onclick="shareOnFB();">Choisir</button>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-6 col-md-12">
-        <div class="card-offer-premium text-center">
-          <div class="wrapper header-red">
-            <img src="<%= image_path('Fleeme-01.png') %>" id="logo-offer">
+      <div class="col-lg-6 col-sm-12">
+        <div class="card-offer text-center">
+          <div class="wrapper  card-offer-header bg-red">
+            <img src="<%= image_path('Fleeme-01.png') %>" class="logo-offer">
           </div>
-          <div class="card-description-premium">
-
-            <h4 class= "red-text" id= "card-pres-premium"><strong>ENVOI AUTOMATIQUE FLEEME</strong></h4>
-
-            <div class="list-offer text-left">
+          <div class="card-description">
+            <div class="card-offer-title tx-red">
+              <h4><strong>ENVOI AUTOMATIQUE FLEEME</strong></h4>
+            </div>
+            <div class="list-offer text-left tx-grey">
               <ul>
-                <li> Génération du courrier recommandé</li>
-                <li> Envoi immédiat de votre lettre à <%= @unsub.service.company %></li>
-                <li> Votre courrier vous est envoyé par mail au format PDF</li>
-                <li> Nous vous renvoyons l'accusé réception sous 3 jours</li>
+                <li>Génération du courrier recommandé.</li>
+                <li>Envoi immédiat de votre lettre à <%= @unsub.service.company %>.</li>
+                <li>Votre courrier vous est envoyé par mail au format PDF.</li>
+                <li>Nous vous renvoyons l'accusé réception sous 3 jours.</li>
               </ul>
             </div>
 
-            <div class="price">
-              <h1 class=" red-text">7€</h1>
+            <div class="price tx-red">
+              <h1>7€</h1>
+              <p>(Prix d'un recommandé + 2€)</p>
             </div>
             <div id="btn-pay">
               <%= form_tag new_unsub_payment_path(@unsub), method: :get do %>
               <%= hidden_field_tag 'unsub_id', @unsub.id %>
-              <%= submit_tag 'Continuer', class: "button-red vcenter", id:"pay"%>
+              <%= submit_tag 'Choisir', class: "button-red vcenter", id:"pay"%>
               <% end %>
             </div>
           </div>

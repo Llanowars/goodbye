@@ -1,0 +1,57 @@
+.offer-header {
+  background: white;
+  border-radius: 1%;
+  padding: 15px;
+}
+
+.offer-header p {
+  color: grey;
+  padding-bottom: 20px;
+}
+
+.logo-offer {
+  height: 100px;
+}
+
+.card-offer {
+  background-color: #FFF;
+  border-radius: 2px;
+  padding: 0px;
+  margin-top: 25px;
+  margin-bottom: 50px;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+
+.card-offer-header {
+  padding: 20px;
+  border-radius: 4px 4px 0px 0px;
+}
+
+.card-offer-title {
+  min-height: 3em;
+  border-bottom: solid 2px;
+  padding: 20px;
+  min-height: 7em;
+}
+
+.card-description {
+  padding: 20px;
+}
+
+.card-description .tx-blue h1 {
+  font-size: 2.3em;
+}
+
+.list-offer {
+  margin-top: 20px;
+  min-height: 6em;
+}
+
+.list-offer ul {
+  list-style: square;
+}
+
+.price h1{
+  min-height: 1em;
+}
