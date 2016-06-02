@@ -33,6 +33,12 @@ fieldset.validate-unsub {
   top: 20px;
 }
 
+.button-upload {
+  width: 50% !important;
+  position: relative;
+  top: 20px;
+}
+
 .initial-pos {
   position: absolute;
   top: 80vh;
@@ -110,7 +116,11 @@ fieldset.custom-form label {
 
 .preview-box {
   position: fixed;
-    bottom: 0px;
-    width: 100%;
-    background-color: rgba(48, 177, 183, 0.31);
+  bottom: 0px;
+  width: 100%;
+  background-color: rgba(48, 177, 183, 0.31);
+}
+
+input.validate_form:focus {
+  outline: none;
 }
