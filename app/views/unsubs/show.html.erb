@@ -5,7 +5,7 @@
   <div class="container text-center">
     <div class="row" id="offer-user-card">
       <div class="col-lg-12 col-sm-12 offer-header">
-        <h2>Merci <strong><%= @unsub.form_complete["firstname"] %> <%= @unsub.form_complete["lastname"] %></strong> pour vos informations</h2>
+        <h2>Merci <strong><%= @unsub.form_complete["firstname"].capitalize %> <%= @unsub.form_complete["lastname"].capitalize %></strong> pour vos informations</h2>
         <p>Nous sommes maintenant en mesure de créer votr courrier personnalisé pour <%= @unsub.service.name %></p>
         <h4>Afin de poursuivre, choisissez votre méthode de résiliation ci-dessous</h4>
       </div>
@@ -25,11 +25,11 @@
             <div class="list-offer text-left">
               <ul>
                 <li> Fleeme génère votre lettre personnalisée</li>
-                <li> Telechargez votre courrier à envoyer (format PDF)</li>
+                <li> Téléchargez votre courrier à envoyer (format PDF)</li>
               </ul>
             </div>
             <div class="p-offer">
-              <p>Cette méthode n'inclut pas l'envoi automatique Fleeme. Nous vous indiquons toutefois l adresse du service concerné</p>
+              <p>Cette méthode n'inclut pas l'envoi automatique Fleeme. Nous vous indiquons toutefois l' adresse du service concerné</p>
             </div>
             <div class="price">
               <h1 class=" blue-text">GRATUIT</h1>
@@ -92,6 +92,9 @@
           <p><%= @unsub.service.name%></p>
           <p><%= @unsub.service.street_address%></p>
           <p><%= @unsub.service.zip_code%>, <%= @unsub.service.city%></p>
+        </div>
+        <div class="text-left">
+          <%= link_to unsub_generate_pdf_path(@unsub), :class => "button-red" do %> <i class="fa fa-file-text-o" aria-hidden="true"></i> Télécharger ma lettre <% end %>
         </div>
       </div>
     </div>

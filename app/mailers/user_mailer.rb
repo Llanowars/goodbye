@@ -1,10 +1,11 @@
 class UserMailer < ApplicationMailer
-  default from: 'notifications@example.com'
+  default from: 'notifications@fleeme.fr'
 
-  def unsub_email(user)
-    @user = user
-    mail(to: @user.email, subject: 'Freeme - Votre désinscription')
+  def unsub_email(unsub)
+    @unsub = unsub
+    mail(to: @unsub.user.email, subject: 'Freeme - Votre désinscription')
   end
 
-  # attachments['filename.jpg'] = File.read('/path/to/filename.jpg')
+
+
 end
