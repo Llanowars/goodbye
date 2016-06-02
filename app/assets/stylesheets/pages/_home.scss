@@ -5,7 +5,7 @@
 
 .bullet-home {
   border: solid 1px #EE5F5B;
-  width: 30px;
+  min-width: 30px;
   height: 30px;
   border-radius: 50%;
   background-color: #EE5F5B;
@@ -13,6 +13,7 @@
   font-weight: bold;
   margin-right: 1em;
   text-align: center;
+  padding-top:2px;
 }
 
 .row-bg-image {
@@ -25,6 +26,11 @@
 
 .row-home {
   height: 400px;
+}
+
+.home-market-line {
+  display: flex;
+  padding-bottom: 20px;
 }
 
 .flex-list li {
