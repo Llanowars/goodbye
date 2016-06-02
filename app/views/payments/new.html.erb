@@ -63,6 +63,71 @@
         </div>
       </div>
     </div>
+
+
+    <div class="service text-right" style="position: absolute; top: 0px; right: 50px;">
+      <p><%= @unsub.service.company %></p>
+      <p><%= @unsub.service.name %></p>
+      <p><%= @unsub.service.postal_box %></p>
+      <p><%= @unsub.service.zip_code %> <%= @unsub.service.city %></p>
+    </div>
+  </div>
+
+  <hr>
+
+
+  <div class="date text-right" style="margin-right: 150px;">
+    <p><%= @unsub.form_complete["city"] %>, le <%= Date.today.strftime("%d-%m-%Y") %></p>
+  </div>
+
+  <hr>
+
+  <div class="object">
+   <p> Objet: Résiliation de la carte cinéma, référence client N° <%= @unsub.form_complete["numero_abonne"] %> </p>
+  </div>
+
+  <div class="body">
+    <p>Madame, Monsieur,</p>
+
+    <p><%= @unsub.content %></p>
+
+    <p>Je vous prie de supprimer de vos fichiers toute information relative à mes coordonnées postales et bancaires. Je m'oppose en particulier à toute utilisation, ou mise à disposition à des organismes extérieurs, de mes coordonnées personnelles à des fins commerciales.</p>
+
+    <p>Veuillez accepter Madame, Monsieur, l' expression de mes salutations distinguées.</p>
+  </div>
+
+  <div class="signature">
+    <p><%= @unsub.user.firstname %> <%= @unsub.user.lastname %></p>
+  </div>
+
+  <%= link_to unsub_payments_path(@unsub), :class => "button-red" do %> <i class="fa fa-file-text-o" aria-hidden="true"></i> Télécharger ma lettre <% end %>
+
+</div>
+
+<hr>
+
+<div class="container">
+  <div class="text-left">
+
+  </div>
+
+  <div class="text-right"><%= form_tag do %>
+
+      <article>
+        <label class="amount">
+          <span>Prix: <%= @unsub.price_cents.to_f/100 %>€</span>
+        </label>
+      </article>
+
+
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+        data-name="My Fleeme"
+        data-description="Fleeme <%= @order %>"
+        data-amount="<%= @unsub.price_cents %>"
+        data-currency="EUR"></script>
+    <% end %>
+
   </div>
 </div>
 
