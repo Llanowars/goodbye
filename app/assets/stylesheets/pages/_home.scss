@@ -28,6 +28,10 @@
   height: 400px;
 }
 
+.container-no-padding {
+  padding: 0px;
+}
+
 .home-market-line {
   display: flex;
   padding-bottom: 20px;
@@ -42,9 +46,8 @@
 }
 
 .card-service {
-
   border-radius: 3px;
-  background-color: rgb(69, 170, 175);
+  background-color: #30B1B7;
   padding: 20px;
 }
 
@@ -62,5 +65,15 @@
 }
 
 #add-service {
-  margin-top: 100px;
+  margin-top: 30px;
 }
+
+#new-service {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+
+
+
+
