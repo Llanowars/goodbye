@@ -1,40 +1,73 @@
+#header-grey {
+  height: 30px;
+}
+
 .offer-header {
   background: white;
   border-radius: 1%;
-  box-shadow: 2px 2px 2px #EE5F5B;
   padding: 15px;
   margin-top: 35px;
   margin-bottom: 50px;
-  height: 177px;
-  width: 420px;
+}
+
+.offer-header h2, h4{
+  color: #30B1B7;
+}
+
+.offer-header p {
+  color: grey;
+  padding-bottom: 20px;
+}
+
+.header-blue {
+  background-color: #30B1B7;
+  padding: 20px;
 }
 
 #logo-offer {
-  width: 50px;
+  width: 90px;
 }
 
-.card-offer {
+#logo-free {
+  width: 90px;
+}
+
+.card-offer-free {
   background: white;
   border-radius: 1%;
-  box-shadow: 2px 2px 2px #EE5F5B;
-  padding: 45px;
+  box-shadow: 1px 1px 1px #30B1B7;
+  padding: 0px;
   margin-top: 25px;
   margin-bottom: 50px;
-  height: 480px;
-  width: 420px;
+  height: 610px;
+  width: 350px;
   margin: 0 auto;
 }
+
+.card-description-free {
+  padding: 20px;
+}
+
+.blue-text {
+  color: #30B1B7;
+}
+
+#card-pres {
+  border-bottom: solid 2px;
+  padding-bottom: 15px;
+}
+
 
 .bg-blue-light {
   background-color: #30B1B7;
 }
 
+.bg-grey {
+  background-color: rgba(166, 177, 178, 0.52);
+}
 
 .bg-blue-light p h2 {
   color: white;
 }
 
-#offer-user-card {
-  display: flex;
-  justify-content: space-around;
-}
+
