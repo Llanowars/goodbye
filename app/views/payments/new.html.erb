@@ -1,5 +1,5 @@
 <div class="div min-height-screen page-basket">
-  <div class="wrapper header-basket bg-blue">
+  <div class="wrapper header-basket">
     <div class="container">
       <div class="basket-title-row">
         <div class="row">
@@ -7,7 +7,7 @@
             <div class="basket-title">
               <i class="fa fa-credit-card" aria-hidden="true"></i>
               <i class="fa fa-lock" aria-hidden="true"></i>
-              Paiement sécurisé
+              <span>PAIEMENT SÉCURISÉ</span>
             </div>
           </div>
         </div>
@@ -20,33 +20,75 @@
         <div class="row">
           <div class="col-lg-3">
             <h5>VOS INFORMATIONS</h5>
-            <p><%=@unsub.form_complete["firstname"]%> <%= @unsub.form_complete["lastname"]%></p>
-            <p><%=@unsub.form_complete["address"]%></p>
-            <p><%=@unsub.form_complete["zipcode"]%></p>
-            <p><%=@unsub.form_complete["city"]%></p>
+            <div class="basket-user-infos">
+              <p><%=@unsub.form_complete["firstname"]%> <%= @unsub.form_complete["lastname"]%></p>
+              <p><small><%=@unsub.form_complete["address"]%><br><%=@unsub.form_complete["zipcode"]%>, <%=@unsub.form_complete["city"]%></small>   </p>
+            </div>
           </div>
           <div class="col-lg-9">
             <h5>VOTRE COMMANDE</h5>
-            <div class="basket-product-name">
-              <h4>Résiliation automatique Fleeme pour <%= @unsub.service.name %></h4>
-            </div>
-            <div class="basket-product-detail">
-              <h6>Services inclus:</h6>
-              <ul class="list-unstyled">
-                <li><i class="fa fa-check fa-lg" aria-hidden="true"></i>Génération de votre lettre personnalisée</li>
-                <li><i class="fa fa-check fa-lg" aria-hidden="true"></i>Envoi de votre lettre personnalisée en recommandé avec accusé de réception à <%= @unsub.service.name %></li>
-                <li><i class="fa fa-check fa-lg" aria-hidden="true"></i>Réception d'une copie de votre lettre de résiliation sur votre boîte email</li>
-                <li><i class="fa fa-check fa-lg" aria-hidden="true"></i>Réception de votre preuve d'envoi délivré par La Poste sur votre boîte mail sous 24h</li>
-              </ul>
+            <div class="basket-product-details">
+              <div class="basket-product-name">
+                <h4>Résiliation automatique Fleeme pour <%= @unsub.service.name %></h4>
+              </div>
+              <div class="product-detail">
+                <div class="row">
+                  <div class="col-lg-8">
+                    <p class="detail-name">Génération de votre lettre personnalisée</p>
+                  </div>
+                  <div class="col-lg-4 text-right">
+                    <p class="detail-price">Offert</p>
+                  </div>
+                </div>
+              </div>
+              <div class="product-detail">
+                <div class="row">
+                  <div class="col-lg-8">
+                    <p class="detail-name">Envoi de votre lettre de résiliation personnalisée en recommandé avec accusé de réception au tarif La Poste</p>
+                  </div>
+                  <div class="col-lg-4 text-right">
+                    <p class="detail-price">5 €</p>
+                  </div>
+                </div>
+              </div>
+              <div class="product-detail">
+                <div class="row">
+                  <div class="col-lg-8">
+                    <p class="detail-name">Réception immédiate d'une copie de votre courrier de résiliation sur votre boîte mail</p>
+                  </div>
+                  <div class="col-lg-4 text-right">
+                    <p class="detail-price">Offert</p>
+                  </div>
+                </div>
+              </div>
+              <div class="product-detail">
+                <div class="row">
+                  <div class="col-lg-8">
+                    <p class="detail-name">Récipissé électronique délivré par La Poste sur votre boîte mail sous 24h</p>
+                  </div>
+                  <div class="col-lg-4 text-right">
+                    <p class="detail-price">Offert</p>
+                  </div>
+                </div>
+              </div>
+              <div class="product-detail">
+                <div class="row">
+                  <div class="col-lg-8">
+                    <p class="detail-name">Frais de gestion Fleeme</p>
+                  </div>
+                  <div class="col-lg-4 text-right">
+                    <p class="detail-price">2 €</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <hr>
         <div class="row">
           <div class="col-lg-12">
             <%= form_tag unsub_payments_path(@unsub) do %>
               <div class="basket-price text-right">
-                <p>MONTANT TOTAL: <span id="price">7 €</span>
+                <p>MONTANT TOTAL: <span id="price">7 €</span></p>
               </div>
               <hr>
               <div class="checkout-button-row text-right">
@@ -57,7 +99,7 @@
                   data-amount="<%= @unsub.price_cents %>"
                   data-currency="EUR">
                 </script>
-            </div>
+              </div>
             <% end %>
           </div>
         </div>

@@ -29,7 +29,6 @@ gem "geocoder"
 gem 'carrierwave'
 gem 'pdfkit'
 gem 'wkhtmltopdf-binary'
-gem 'mail'
 
 source "https://rails-assets.org" do
   gem 'rails-assets-bootstrap-datepicker'
@@ -44,7 +43,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'spring'
   gem 'faker'
-
+  gem "letter_opener"
 end
 
 group :production do
