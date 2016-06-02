@@ -17,10 +17,12 @@
 .btn-blue-neg {
   border: solid 1px #30B1B7;
   color: #30B1B7;
-  padding: 9px;
-  border-radius: 3px;
+  padding: 0px 20px;
+  border-radius: 4px;
+  line-height: 40px;
   text-decoration: none;
-  margin-right: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
   background-color: white;
 }
 
@@ -38,7 +40,8 @@
 
 .button-red {
   margin-left: 10px;
-  padding: 0 20px;
+  margin-right: 10px;
+  padding: 0px 20px;
   border-radius: 4px;
   line-height: 40px;
   background-color: #EE5F5B;
