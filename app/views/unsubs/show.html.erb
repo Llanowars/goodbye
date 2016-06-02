@@ -92,6 +92,9 @@
           <p><%= @unsub.service.street_address%></p>
           <p><%= @unsub.service.zip_code%>, <%= @unsub.service.city%></p>
         </div>
+        <div class="text-left">
+          <%= link_to unsub_generate_pdf_path(@unsub), :class => "button-red" do %> <i class="fa fa-file-text-o" aria-hidden="true"></i> Télécharger ma lettre <% end %>
+        </div>
       </div>
     </div>
   </div>
