@@ -23,7 +23,7 @@ class UnsubsController < ApplicationController
 
   def create
     initialize_hash
-    @fields = generate_fields(@hash_service)[9][:choices]
+    @fields = generate_fields(@hash_service)[7][:choices]
 
     @user = User.new
     @user.firstname = params[:unsub][:form_complete][:firstname]
