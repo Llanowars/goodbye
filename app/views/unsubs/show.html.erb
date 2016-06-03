@@ -2,7 +2,7 @@
   <div class="container text-center">
     <div class="row">
       <div class="col-lg-12 col-sm-12 offer-header">
-        <h2 class="tx-blue">Merci <strong><%= @unsub.form_complete["firstname"] %> <%= @unsub.form_complete["lastname"] %></strong></h2>
+        <h2 class="tx-blue">Merci <strong><%= @unsub.form_complete["firstname"] %></strong></h2>
         <p>Nous sommes maintenant en mesure de créer votre courrier personnalisé pour <%= @unsub.service.name %></p>
         <h4 class="tx-blue">Afin de poursuivre, choisissez une offre ci-dessous</h4>
       </div>
@@ -80,11 +80,12 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-        <h4 class="modal-title">Votre lettre personnalisée</h4>
+        <h4 class="modal-title">Votre courrier personnalisé</h4>
       </div>
       <div class="modal-body">
-        <p><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>Merci pour votre partage.</p>
-        <p>Cliquez sur "Télécharger ma lettre" ci-dessous pour obtenir votre lettre de résiliation au format PDF.</p>
+        <h4 class="tx-blue text-center"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Merci pour votre partage.</h4>
+        <hr>
+        <p>Cliquez sur "Télécharger mon courrier" ci-dessous pour obtenir votre courrier de résiliation au format PDF.</p>
         <p>Votre demande de résiliation doit être envoyée à l'adresse suivante:</p>
         <div class="card-address-service">
           <p><%= @unsub.service.company%></p>
@@ -92,9 +93,10 @@
           <p><%= @unsub.service.street_address%></p>
           <p><%= @unsub.service.zip_code%>, <%= @unsub.service.city%></p>
         </div>
-        <div class="text-left">
-          <%= link_to unsub_generate_pdf_path(@unsub), :class => "button-red" do %> <i class="fa fa-file-text-o" aria-hidden="true"></i> Télécharger ma lettre <% end %>
+        <div class="text-center">
+          <%= link_to unsub_generate_pdf_path(@unsub), :class => "btn button-red" do %> <i class="fa fa-file-text-o" aria-hidden="true"></i> Télécharger mon courrier<% end %>
         </div>
+        <hr>
       </div>
     </div>
   </div>
