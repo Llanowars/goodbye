@@ -3,7 +3,7 @@ class UserMailer < ApplicationMailer
 
   def unsub_email(unsub)
     @unsub = unsub
-    mail(to: @unsub.user.email, subject: 'Freeme - Votre désinscription')
+    mail(to: @unsub.user.email, subject: 'Freeme - Résiliation' )
   end
 
 

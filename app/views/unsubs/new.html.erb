@@ -45,11 +45,11 @@
             <%= form_tag "/profiles/update", :multipart => true  %>
             <%= file_field_tag :photo  %>
           </div>
-          <div class="btn-blue-neg next-button button-upload" >Suivant</div>
+          <div class="btn-blue-neg next-button-upload button-upload" >Suivant</div>
         </fieldset>
         <fieldset class="initial-pos validate-unsub">
           <p>Vos informations sont bien enregistrées.</p>
-          <%= submit_tag "Générer mon courrier", class: "validate-form btn-blue-neg" %>
+          <%= submit_tag "Valider ces informations", class: "validate-form btn-blue" %>
         </fieldset>
     <% end %>
     </div>
