@@ -14,7 +14,7 @@
         <div class="col-lg-4 col-sm-6">
           <div class="card-service">
             <img src="<%= image_path('gaumont.png') %>">
-            <p>Carte Gaumont Le Pass</p>
+            <p>Gaumont Le Pass</p>
             <button class="button-red">Résilier</button>
           </div>
         </div>
@@ -56,7 +56,7 @@
         </div>
         <div class="home-market-line">
           <div class="bullet-home">3</div>
-          <p>Recevez une confirmation quand le recommandé est envoyé</p>
+          <p>Recevez l'accusé de reception des que le recommandé est livré</p>
         </div>
         <div class="home-market-line">
           <div class="bullet-home">4</div>
@@ -86,7 +86,7 @@
         <div class=" text-center">
           <img class="card-market-image" src="<%= image_path('home-market-icons-02.png') %>">
           <div class="card-market-name tx-white">Courrier recommandé AR</div>
-          <div class="card-description">
+          <div class="card-market-description">
             <p>Validité administrative de l'accusé réception</p>
           </div>
         </div>
@@ -137,6 +137,8 @@
     </div>
   </div>
 </div>
-<div class="wrapper bg-blue">
-
+<div class="wrapper bg-blue text-center">
+  <div class="search">
+    <%= link_to t(".top_call_to_action", default: "Commencer maintenant #{image_tag('logo-icon.png')}".html_safe ), "#services", class: "navbar-wagon-item button-red btn button-with-icon", id: "bottom-button" %>
+  </div>
 </div>
