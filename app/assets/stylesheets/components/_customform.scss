@@ -78,10 +78,23 @@ fieldset.custom-form input.input-text:focus {
   outline:none;
 }
 
-fieldset.custom-form label {
+fieldset.custom-form > label {
   font-weight: normal;
   font-size: 0.9em;
   color: #30B1B7;
+}
+
+
+fieldset.sublevel > label {
+  font-weight: normal;
+  font-size: 0.9em;
+  color: #30B1B7;
+}
+
+fieldset .radio-field label {
+  font-weight: normal;
+  font-size: 0.9em;
+  color: #616161;
 }
 
 .preview-data {

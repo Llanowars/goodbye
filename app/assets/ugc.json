@@ -25,11 +25,6 @@
       "required": true
     },
     {
-      "name": "address_complement",
-      "label": "Complément d' adresse",
-      "type": "text"
-    },
-    {
       "name": "zipcode",
       "label": "Code postal",
       "type": "text",
@@ -40,11 +35,6 @@
       "label": "Ville",
       "type": "text",
       "required": true
-    },
-    {
-      "name": "phone",
-      "label": "Numéro de téléphone",
-      "type": "text"
     },
     {
       "name": "numero_abonne",

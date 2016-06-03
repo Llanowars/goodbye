@@ -2,6 +2,12 @@
 
     $('input:radio').removeAttr('checked');
 
+    $(window).keydown(function(event){
+      if (event.keyCode == 13)  {
+        event.preventDefault();
+        console.log('enter');
+      }
+    });
 
     $.fn.moveMid = function(){
       console.log('move mid')
@@ -18,12 +24,20 @@
       $(this).parent().prev().moveTop();
     });
 
-    $('fieldset div input').focus(function() {
-      $(this).parent().parent().moveMid();
-      $(this).parent().parent().prev().moveTop();
-      preview_data = ($(this).parent().parent().prev().children('input').val());
-      $('#preview-infos').append('<li class="preview-data">' + preview_data + '</li>')
-    });
+    // $('fieldset div input').focus(function() {
+    //   $(this).parent().parent().moveMid();
+    //   $(this).parent().parent().prev().moveTop();
+    //   preview_data = ($(this).parent().prev().children('input').val());
+    //   preview_label = ($(this).parent().children('label').text());
+    //   if (_.isEmpty(preview_data)) {
+    //     $('#preview-infos').append('<li class="preview-data"> Information manquante </li>')
+    //   }
+    //   else {
+    //     $('#preview-infos').append('<li class="preview-data" data-name="' + $(this).parent().children('input').attr('name') +'">' + '<span class="preview-label">' +  preview_label + ':' + '</span>' + preview_data +  '<i class="fa fa-pencil" aria-hidden="true"></i>' + '</li>')
+    //   }
+
+
+    // });
 
     $('fieldset input:submit').focus(function() {
       $(this).parent().moveMid();
@@ -38,12 +52,23 @@
 
     $('.next-button').click(function () {
       console.log('click click normal')
-      $(this).parent().moveTop();
-      $(this).parent().nextAll(":visible").first().moveMid();
-      $(this).parent().nextAll(":visible").first().children('input').focus();
-      preview_data = ($(this).parent().children('input').val());
-      preview_label = ($(this).parent().children('label').text());
-      $('#preview-infos').append('<li class="preview-data" data-name="' + $(this).parent().children('input').attr('name') +'">' + '<span class="preview-label"' +  preview_label + ':' + '</span>' + preview_data +  '<i class="fa fa-pencil" aria-hidden="true"></i>' + '</li>')
+      if (_.isEmpty($(this).parent().children('input').val())) {
+        console.log("warning")
+      }
+      else {
+        $(this).parent().moveTop();
+        $(this).parent().nextAll(":visible").first().moveMid();
+        $(this).parent().nextAll(":visible").first().children('input').focus();
+        preview_data = ($(this).parent().children('input').val());
+        preview_label = ($(this).parent().children('label').text());
+        if (_.isEmpty(preview_data)) {
+          $('#preview-infos').append('<li class="preview-data"> Information manquante </li>')
+        }
+        else {
+          $('#preview-infos').append('<li class="preview-data" data-name="' + $(this).parent().children('input').attr('name') +'">' + '<span class="preview-label">' +  preview_label + ':' + '</span>' + preview_data +  '<i class="fa fa-pencil" aria-hidden="true"></i>' + '</li>')
+        };
+
+      }
     });
 
 
@@ -62,8 +87,18 @@
           $(this).moveMid();
         });
       }
+      preview_data = ($(this).parent().find('input:checked').val());
+      $('#preview-infos').append('<li class="preview-data">' + preview_data +'</li>')
 
     });
+
+      $('.next-button-upload').click(function () {
+        console.log('click click normal')
+        $(this).parent().moveTop();
+        $(this).parent().nextAll(":visible").first().moveMid();
+      });
+
+
 
 
     $('#preview-infos').on('click', "li", function() {

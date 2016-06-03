@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :unsubs, only: [ :new, :create, :show] do
     resources :payments, only: [:new, :create,]
-
+    get "/test" => "pages#test"
     get "/generate_pdf" => "payments#generate_pdf"
     get "/send_email"  => "unsubs#send_email"
   end
